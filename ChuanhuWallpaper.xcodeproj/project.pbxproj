@@ -1,0 +1,439 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1207B47D296EF60200B5D36D /* ChuanhuWallpaperApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1207B47C296EF60200B5D36D /* ChuanhuWallpaperApp.swift */; };
+		1207B47F296EF60200B5D36D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1207B47E296EF60200B5D36D /* ContentView.swift */; };
+		1207B481296EF60300B5D36D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1207B480296EF60300B5D36D /* Assets.xcassets */; };
+		1207B484296EF60300B5D36D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1207B483296EF60300B5D36D /* Preview Assets.xcassets */; };
+		1207B48D296EF61C00B5D36D /* WallpapperLib in Frameworks */ = {isa = PBXBuildFile; productRef = 1207B48C296EF61C00B5D36D /* WallpapperLib */; };
+		1207B491296EF61C00B5D36D /* wallpapper-exif in Frameworks */ = {isa = PBXBuildFile; productRef = 1207B490296EF61C00B5D36D /* wallpapper-exif */; };
+		1207B495296EF74B00B5D36D /* SolarWallpaperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1207B494296EF74B00B5D36D /* SolarWallpaperView.swift */; };
+		1207B497296EF75F00B5D36D /* TimeWallpaperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1207B496296EF75F00B5D36D /* TimeWallpaperView.swift */; };
+		1207B499296EF77000B5D36D /* AppearanceWallpaperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1207B498296EF77000B5D36D /* AppearanceWallpaperView.swift */; };
+		1207B49B296F09F000B5D36D /* ImageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1207B49A296F09F000B5D36D /* ImageModel.swift */; };
+		1207B49E296FAE6E00B5D36D /* FilePicker in Frameworks */ = {isa = PBXBuildFile; productRef = 1207B49D296FAE6E00B5D36D /* FilePicker */; };
+		1207B4A0296FC77700B5D36D /* noimage.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1207B49F296FC77700B5D36D /* noimage.jpg */; };
+		1207B4A4296FEB3400B5D36D /* UsefulFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1207B4A3296FEB3400B5D36D /* UsefulFunctions.swift */; };
+		1207B4A92970055000B5D36D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1207B4AB2970055000B5D36D /* Localizable.strings */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1207B479296EF60200B5D36D /* ChuanhuWallpaper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChuanhuWallpaper.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1207B47C296EF60200B5D36D /* ChuanhuWallpaperApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChuanhuWallpaperApp.swift; sourceTree = "<group>"; };
+		1207B47E296EF60200B5D36D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		1207B480296EF60300B5D36D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1207B483296EF60300B5D36D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		1207B485296EF60300B5D36D /* ChuanhuWallpaper.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ChuanhuWallpaper.entitlements; sourceTree = "<group>"; };
+		1207B494296EF74B00B5D36D /* SolarWallpaperView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolarWallpaperView.swift; sourceTree = "<group>"; };
+		1207B496296EF75F00B5D36D /* TimeWallpaperView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeWallpaperView.swift; sourceTree = "<group>"; };
+		1207B498296EF77000B5D36D /* AppearanceWallpaperView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearanceWallpaperView.swift; sourceTree = "<group>"; };
+		1207B49A296F09F000B5D36D /* ImageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageModel.swift; sourceTree = "<group>"; };
+		1207B49F296FC77700B5D36D /* noimage.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = noimage.jpg; sourceTree = "<group>"; };
+		1207B4A2296FE58E00B5D36D /* wallpapper */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = wallpapper; path = ../../../../../../Downloads/wallpapper; sourceTree = "<group>"; };
+		1207B4A3296FEB3400B5D36D /* UsefulFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsefulFunctions.swift; sourceTree = "<group>"; };
+		1207B4AA2970055000B5D36D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		1207B4AC2970077500B5D36D /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1207B476296EF60200B5D36D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1207B49E296FAE6E00B5D36D /* FilePicker in Frameworks */,
+				1207B491296EF61C00B5D36D /* wallpapper-exif in Frameworks */,
+				1207B48D296EF61C00B5D36D /* WallpapperLib in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1207B470296EF60200B5D36D = {
+			isa = PBXGroup;
+			children = (
+				1207B47B296EF60200B5D36D /* ChuanhuWallpaper */,
+				1207B47A296EF60200B5D36D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		1207B47A296EF60200B5D36D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1207B479296EF60200B5D36D /* ChuanhuWallpaper.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1207B47B296EF60200B5D36D /* ChuanhuWallpaper */ = {
+			isa = PBXGroup;
+			children = (
+				1207B47C296EF60200B5D36D /* ChuanhuWallpaperApp.swift */,
+				1207B47E296EF60200B5D36D /* ContentView.swift */,
+				1207B4AB2970055000B5D36D /* Localizable.strings */,
+				1207B480296EF60300B5D36D /* Assets.xcassets */,
+				1207B494296EF74B00B5D36D /* SolarWallpaperView.swift */,
+				1207B496296EF75F00B5D36D /* TimeWallpaperView.swift */,
+				1207B498296EF77000B5D36D /* AppearanceWallpaperView.swift */,
+				1207B485296EF60300B5D36D /* ChuanhuWallpaper.entitlements */,
+				1207B482296EF60300B5D36D /* Preview Content */,
+				1207B49A296F09F000B5D36D /* ImageModel.swift */,
+				1207B4A3296FEB3400B5D36D /* UsefulFunctions.swift */,
+				1207B49F296FC77700B5D36D /* noimage.jpg */,
+				1207B4A2296FE58E00B5D36D /* wallpapper */,
+			);
+			path = ChuanhuWallpaper;
+			sourceTree = "<group>";
+		};
+		1207B482296EF60300B5D36D /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				1207B483296EF60300B5D36D /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1207B478296EF60200B5D36D /* ChuanhuWallpaper */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1207B488296EF60300B5D36D /* Build configuration list for PBXNativeTarget "ChuanhuWallpaper" */;
+			buildPhases = (
+				1207B475296EF60200B5D36D /* Sources */,
+				1207B476296EF60200B5D36D /* Frameworks */,
+				1207B477296EF60200B5D36D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ChuanhuWallpaper;
+			packageProductDependencies = (
+				1207B48C296EF61C00B5D36D /* WallpapperLib */,
+				1207B490296EF61C00B5D36D /* wallpapper-exif */,
+				1207B49D296FAE6E00B5D36D /* FilePicker */,
+			);
+			productName = ChuanhuWallpaper;
+			productReference = 1207B479296EF60200B5D36D /* ChuanhuWallpaper.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1207B471296EF60200B5D36D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1420;
+				LastUpgradeCheck = 1420;
+				TargetAttributes = {
+					1207B478296EF60200B5D36D = {
+						CreatedOnToolsVersion = 14.2;
+					};
+				};
+			};
+			buildConfigurationList = 1207B474296EF60200B5D36D /* Build configuration list for PBXProject "ChuanhuWallpaper" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+				"zh-Hans",
+			);
+			mainGroup = 1207B470296EF60200B5D36D;
+			packageReferences = (
+				1207B48B296EF61C00B5D36D /* XCRemoteSwiftPackageReference "wallpapper" */,
+				1207B49C296FAE6E00B5D36D /* XCRemoteSwiftPackageReference "FilePicker" */,
+			);
+			productRefGroup = 1207B47A296EF60200B5D36D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1207B478296EF60200B5D36D /* ChuanhuWallpaper */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1207B477296EF60200B5D36D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1207B4A0296FC77700B5D36D /* noimage.jpg in Resources */,
+				1207B4A92970055000B5D36D /* Localizable.strings in Resources */,
+				1207B484296EF60300B5D36D /* Preview Assets.xcassets in Resources */,
+				1207B481296EF60300B5D36D /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1207B475296EF60200B5D36D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1207B499296EF77000B5D36D /* AppearanceWallpaperView.swift in Sources */,
+				1207B49B296F09F000B5D36D /* ImageModel.swift in Sources */,
+				1207B497296EF75F00B5D36D /* TimeWallpaperView.swift in Sources */,
+				1207B47F296EF60200B5D36D /* ContentView.swift in Sources */,
+				1207B4A4296FEB3400B5D36D /* UsefulFunctions.swift in Sources */,
+				1207B47D296EF60200B5D36D /* ChuanhuWallpaperApp.swift in Sources */,
+				1207B495296EF74B00B5D36D /* SolarWallpaperView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		1207B4AB2970055000B5D36D /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1207B4AA2970055000B5D36D /* en */,
+				1207B4AC2970077500B5D36D /* zh-Hans */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1207B486296EF60300B5D36D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 13.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		1207B487296EF60300B5D36D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 13.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		1207B489296EF60300B5D36D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = ChuanhuWallpaper/ChuanhuWallpaper.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"ChuanhuWallpaper/Preview Content\"";
+				DEVELOPMENT_TEAM = KWS26AWJ45;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tuchuanhuhuhu.ChuanhuWallpaper;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		1207B48A296EF60300B5D36D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = ChuanhuWallpaper/ChuanhuWallpaper.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"ChuanhuWallpaper/Preview Content\"";
+				DEVELOPMENT_TEAM = KWS26AWJ45;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tuchuanhuhuhu.ChuanhuWallpaper;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1207B474296EF60200B5D36D /* Build configuration list for PBXProject "ChuanhuWallpaper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1207B486296EF60300B5D36D /* Debug */,
+				1207B487296EF60300B5D36D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1207B488296EF60300B5D36D /* Build configuration list for PBXNativeTarget "ChuanhuWallpaper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1207B489296EF60300B5D36D /* Debug */,
+				1207B48A296EF60300B5D36D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		1207B48B296EF61C00B5D36D /* XCRemoteSwiftPackageReference "wallpapper" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/mczachurski/wallpapper";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+		1207B49C296FAE6E00B5D36D /* XCRemoteSwiftPackageReference "FilePicker" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/markrenaud/FilePicker.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		1207B48C296EF61C00B5D36D /* WallpapperLib */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1207B48B296EF61C00B5D36D /* XCRemoteSwiftPackageReference "wallpapper" */;
+			productName = WallpapperLib;
+		};
+		1207B490296EF61C00B5D36D /* wallpapper-exif */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1207B48B296EF61C00B5D36D /* XCRemoteSwiftPackageReference "wallpapper" */;
+			productName = "wallpapper-exif";
+		};
+		1207B49D296FAE6E00B5D36D /* FilePicker */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1207B49C296FAE6E00B5D36D /* XCRemoteSwiftPackageReference "FilePicker" */;
+			productName = FilePicker;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 1207B471296EF60200B5D36D /* Project object */;
+}

@@ -1,0 +1,30 @@
+/* 
+  Localizable.strings
+  ChuanhuWallpaper
+
+  Created by Tree Diagram on 2023/1/12.
+  
+*/
+
+"Appearance" = "亮暗色";
+"Solar" = "太阳";
+"Time" = "时间";
+"Is Primary" = "用作缩略图";
+"Is For:" = "用于";
+"Dark" = "暗色";
+"Light" = "亮色";
+"None" = "无";
+"Altitude" = "海拔";
+"Azimuth" = "方位角";
+"Move Up" = "上移";
+"Move Down" = "下移";
+"Trash" = "删除";
+"Add New Picture" = "添加新图像";
+"Save Wallpaper" = "保存壁纸";
+"An Error Occured" = "出现了一个错误";
+"Unexpected error occurs:" = "出现了意外错误：";
+"Really Unexpected error occurs:" = "出现了诡异的意外错误";
+" image(s)" = " 张图像";
+"Light Image" = "亮色图像";
+"Change Picture" = "更改图像";
+"Dark Image" = "暗色图像";
