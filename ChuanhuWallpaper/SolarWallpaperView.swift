@@ -14,6 +14,7 @@ struct SolarWallpaperView: View {
     @State var pictureInfos: [PictureInfo] = []
     @State var showErrorMessage = false
     @State var errorMessage = ""
+    @State var showPopover = false
     let wallpaperGenerator = WallpaperGenerator()
     
     var body: some View {
@@ -93,6 +94,16 @@ struct SolarWallpaperView: View {
                 }
                 .alert(isPresented: $showErrorMessage) {
                     Alert(title: Text("An Error Occured"), message: Text(errorMessage), dismissButton: .cancel())
+                }
+                HelpButton {
+                    self.showPopover.toggle()
+                }
+                .popover(isPresented: self.$showPopover, arrowEdge: .bottom) {
+                    VStack {
+                        Text("The primary image will be visible after creating heic file. If image was set to Light, it will be displayed when user chose \"Light (static)\" wallpaper. The same happened when set to Dark. Altitude is the angle between the Sun and the observer's local horizon. Azimuth  is the angle of the Sun around the horizon.")
+                    }
+                    .frame(width: 200)
+                    .padding()
                 }
             }
             Text(String(wallpapers.count) + " image(s)")

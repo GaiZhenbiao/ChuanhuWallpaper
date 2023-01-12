@@ -14,6 +14,7 @@ struct TimeWallpaperView: View {
     @State var pictureInfos: [PictureInfo] = []
     @State var showErrorMessage = false
     @State var errorMessage = ""
+    @State var showPopover = false
     let wallpaperGenerator = WallpaperGenerator()
     
     var body: some View {
@@ -94,6 +95,16 @@ struct TimeWallpaperView: View {
                 }
                 .alert(isPresented: $showErrorMessage) {
                     Alert(title: Text("An Error Occured"), message: Text(errorMessage), dismissButton: .cancel())
+                }
+                HelpButton {
+                    self.showPopover.toggle()
+                }
+                .popover(isPresented: self.$showPopover, arrowEdge: .bottom) {
+                    VStack {
+                        Text("Pictures switch based on OS time. If set to primary, the image will be visible after creating the heic file. If set to \"is for Light\", picture will be displayed when user chose \"Light (static)\". The same is true for \"is for Dark\". Time is most relevant in hour.")
+                    }
+                    .frame(width: 200)
+                    .padding()
                 }
             }
             Text("\(wallpapers.count) image(s)")
