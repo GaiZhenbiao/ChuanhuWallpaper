@@ -18,7 +18,7 @@ A GUI for [Wallpapper](https://github.com/mczachurski/wallpapper), generates dyn
 
 ![Earth View](resources/Earth View.jpeg)
 
-## Hello（按亮暗色模式切换）
+### Hello（按亮暗色模式切换）
 
 由 [Basic Apple Guy](https://basicappleguy.com/basicappleblog/hello-20) 绘制。[下载](https://www.icloud.com.cn/iclouddrive/012EtxZCzufN9Ci4RurixpoUg#hello)
 
