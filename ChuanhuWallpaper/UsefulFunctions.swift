@@ -13,9 +13,9 @@ func showSavePanel() -> String? {
     savePanel.allowedContentTypes = [.heic]
     savePanel.canCreateDirectories = true
     savePanel.isExtensionHidden = false
-    savePanel.title = "Save your image"
-    savePanel.message = "Choose a folder and a name to store the image."
-    savePanel.nameFieldLabel = "Image file name:"
+    savePanel.title = "Save your dynamic wallpaper"
+    savePanel.message = "Choose a folder and a name to store the wallpaper."
+    savePanel.nameFieldLabel = "Wallpaper file name:"
 
     let response = savePanel.runModal()
     return response == .OK ? savePanel.url?.path().removingPercentEncoding : nil

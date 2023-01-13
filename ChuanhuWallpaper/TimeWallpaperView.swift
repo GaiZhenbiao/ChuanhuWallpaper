@@ -64,38 +64,28 @@ struct TimeWallpaperView: View {
             .padding()
             HStack {
                 FilePicker(types: [.image], allowMultiple: false) { urls in
-                    if let filepath = urls[0].path().removingPercentEncoding{
-                        wallpapers.append(WallpaperImage(fileName: filepath))
+//                    if let filepath = urls[0].path().removingPercentEncoding{
+//                        wallpapers.append(WallpaperImage(fileName: filepath))
+//                    }
+                    let fileURL = urls[0]
+                    do {
+                        let inputFileContents = try Data(contentsOf: fileURL)
+                        let locationExtractor = LocationExtractor()
+                        let imageCreateDate = try locationExtractor.extractTime(imageData: inputFileContents)
+                        wallpapers.append(WallpaperImage(fileName: fileURL.path().removingPercentEncoding!, time: imageCreateDate))
+                    } catch (let error) where "\(error)" == "missingCreationDate" {
+                        wallpapers.append(WallpaperImage(fileName: fileURL.path().removingPercentEncoding!))
+                    } catch (let error as WallpapperError) {
+                        showErrorMessage = true
+                        errorMessage = "Unexpected error occurs: \(error)"
+                    } catch {
+                        showErrorMessage = true
+                        errorMessage = "oops: \(error)"
                     }
                 } label: {
                     Label("Add New Picture", systemImage: "doc.badge.plus")
                 }
-                Button {
-                    pictureInfos = []
-                    for wallpaper in wallpapers{
-                        pictureInfos.append(PictureInfo( fileName: wallpaper.fileName, isPrimary: wallpaper.isPrimary, isForLight: wallpaper.isFor == .light, isForDark: wallpaper.isFor == .dark, time: wallpaper.time))
-                    }
-                    if let outputFileName = showSavePanel(){
-                        do {
-                            try wallpaperGenerator.generate(pictureInfos: pictureInfos, baseURL: URL(string: "/")!, outputFileName: outputFileName)
-                        } catch (let error as WallpapperError) {
-                            showErrorMessage = true
-                            errorMessage = "Unexpected error occurs: \(error.message)"
-                        } catch {
-                            showErrorMessage = true
-                            errorMessage = "Really Unexpected error occurs: \(error)"
-                        }
-                    }
-                } label: {
-                    Label {
-                        Text("Save Wallpaper")
-                    } icon: {
-                        Image(systemName: "square.and.arrow.up")
-                    }
-                }
-                .alert(isPresented: $showErrorMessage) {
-                    Alert(title: Text("An Error Occured"), message: Text(errorMessage), dismissButton: .cancel())
-                }
+                SubmitButton(wallpapers: wallpapers)
                 HelpButton {
                     self.showPopover.toggle()
                 }
@@ -108,6 +98,7 @@ struct TimeWallpaperView: View {
                 }
             }
             Text("\(wallpapers.count) image(s)")
+                .padding(.bottom)
         }
     }
 }

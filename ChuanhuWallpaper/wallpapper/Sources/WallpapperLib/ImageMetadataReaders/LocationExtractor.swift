@@ -97,6 +97,54 @@ public class LocationExtractor {
         return ImageLocation(latitude: latitude, longitude: longitude, createDate: createDate)
     }
     
+    public func extractTime(imageData: Data) throws -> Date {
+        let imageSource = CGImageSourceCreateWithData(imageData as CFData, nil)
+        guard let imageSourceValue = imageSource else {
+            throw MetadataExtractorError.imageSourceNotCreated
+        }
+        
+        let imageMetadata = CGImageSourceCopyMetadataAtIndex(imageSourceValue, 0, nil)
+        guard let imageMetadataValue = imageMetadata else {
+            throw MetadataExtractorError.imageMetadataNotCreated
+        }
+        
+        var datRaw: String?
+        var dat: Date?
+        
+        CGImageMetadataEnumerateTagsUsingBlock(imageMetadataValue, nil, nil) { (value, metadataTag) -> Bool in
+
+            let valueString = value as String
+            let tag = CGImageMetadataTagCopyValue(metadataTag)
+            
+            switch valueString {
+            case "xmp:CreateDate":
+                guard let valueTag = tag as? String else {
+                    return false
+                }
+                
+                datRaw = valueTag
+                dat = self.toDate(value: valueTag)
+                break
+            default:
+                break
+            }
+            
+            return true
+        }
+
+
+        guard datRaw != nil else {
+            throw ExifExtractorError.missingCreationDate
+        }
+        
+
+        guard let createDate = dat else {
+            throw ExifExtractorError.notSupportedCreationDate(date: datRaw)
+        }
+        
+        return createDate
+    }
+    
     func toDate(value: String) -> Date? {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS"

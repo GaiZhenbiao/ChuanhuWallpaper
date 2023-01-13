@@ -21,6 +21,8 @@
 		1207B4A0296FC77700B5D36D /* noimage.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1207B49F296FC77700B5D36D /* noimage.jpg */; };
 		1207B4A4296FEB3400B5D36D /* UsefulFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1207B4A3296FEB3400B5D36D /* UsefulFunctions.swift */; };
 		1207B4A92970055000B5D36D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1207B4AB2970055000B5D36D /* Localizable.strings */; };
+		129D354E29715C2400240248 /* SubmitButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 129D354D29715C2400240248 /* SubmitButton.swift */; };
+		129D35522971603100240248 /* AddPictureButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 129D35512971603100240248 /* AddPictureButton.swift */; };
 		12BF6A5829704133001F0EB4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12BF6A5729704133001F0EB4 /* AppDelegate.swift */; };
 /* End PBXBuildFile section */
 
@@ -40,6 +42,8 @@
 		1207B4AA2970055000B5D36D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		1207B4AC2970077500B5D36D /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		127BF6B12970430100FB20B7 /* wallpapper */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = wallpapper; sourceTree = "<group>"; };
+		129D354D29715C2400240248 /* SubmitButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmitButton.swift; sourceTree = "<group>"; };
+		129D35512971603100240248 /* AddPictureButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPictureButton.swift; sourceTree = "<group>"; };
 		12BF6A5729704133001F0EB4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -82,7 +86,9 @@
 				1207B4AB2970055000B5D36D /* Localizable.strings */,
 				1207B480296EF60300B5D36D /* Assets.xcassets */,
 				1207B494296EF74B00B5D36D /* SolarWallpaperView.swift */,
+				129D354D29715C2400240248 /* SubmitButton.swift */,
 				1207B496296EF75F00B5D36D /* TimeWallpaperView.swift */,
+				129D35512971603100240248 /* AddPictureButton.swift */,
 				1207B498296EF77000B5D36D /* AppearanceWallpaperView.swift */,
 				1207B485296EF60300B5D36D /* ChuanhuWallpaper.entitlements */,
 				1207B482296EF60300B5D36D /* Preview Content */,
@@ -185,8 +191,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				12BF6A5829704133001F0EB4 /* AppDelegate.swift in Sources */,
+				129D354E29715C2400240248 /* SubmitButton.swift in Sources */,
 				1207B499296EF77000B5D36D /* AppearanceWallpaperView.swift in Sources */,
 				1207B49B296F09F000B5D36D /* ImageModel.swift in Sources */,
+				129D35522971603100240248 /* AddPictureButton.swift in Sources */,
 				1207B497296EF75F00B5D36D /* TimeWallpaperView.swift in Sources */,
 				1207B47F296EF60200B5D36D /* ContentView.swift in Sources */,
 				1207B4A4296FEB3400B5D36D /* UsefulFunctions.swift in Sources */,
@@ -333,7 +341,7 @@
 				CODE_SIGN_ENTITLEMENTS = ChuanhuWallpaper/ChuanhuWallpaper.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_ASSET_PATHS = "\"ChuanhuWallpaper/Preview Content\"";
 				DEVELOPMENT_TEAM = KWS26AWJ45;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -345,7 +353,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 1.6;
+				MARKETING_VERSION = 1.7;
 				PRODUCT_BUNDLE_IDENTIFIER = com.tuchuanhuhuhu.ChuanhuWallpaper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -361,7 +369,7 @@
 				CODE_SIGN_ENTITLEMENTS = ChuanhuWallpaper/ChuanhuWallpaper.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_ASSET_PATHS = "\"ChuanhuWallpaper/Preview Content\"";
 				DEVELOPMENT_TEAM = KWS26AWJ45;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -373,7 +381,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 1.6;
+				MARKETING_VERSION = 1.7;
 				PRODUCT_BUNDLE_IDENTIFIER = com.tuchuanhuhuhu.ChuanhuWallpaper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;

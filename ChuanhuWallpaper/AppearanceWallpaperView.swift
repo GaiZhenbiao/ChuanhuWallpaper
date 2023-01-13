@@ -14,6 +14,7 @@ struct AppearanceWallpaperView: View {
     @State var pictureInfos: [PictureInfo] = []
     @State var showErrorMessage = false
     @State var errorMessage = ""
+    @State var currentSelectedNum = 0
     let wallpaperGenerator = WallpaperGenerator()
     
     var body: some View {
@@ -30,6 +31,7 @@ struct AppearanceWallpaperView: View {
                     FilePicker(types: [.image], allowMultiple: false) { urls in
                         if let filepath = urls[0].path().removingPercentEncoding{
                             wallpapers[0].fileName = filepath
+                            currentSelectedNum += 1
                         }
                     } label: {
                         Label("Change Picture", systemImage: "doc.badge.plus")
@@ -48,6 +50,7 @@ struct AppearanceWallpaperView: View {
                     FilePicker(types: [.image], allowMultiple: false) { urls in
                         if let filepath = urls[0].path().removingPercentEncoding{
                             wallpapers[1].fileName = filepath
+                            currentSelectedNum += 1
                         }
                     } label: {
                         Label("Change Picture", systemImage: "doc.badge.plus")
@@ -55,32 +58,8 @@ struct AppearanceWallpaperView: View {
                 }
             }
             .padding()
-            Button {
-                pictureInfos = []
-                for wallpaper in wallpapers{
-                    pictureInfos.append(PictureInfo( fileName: wallpaper.fileName, isPrimary: wallpaper.isPrimary, isForLight: wallpaper.isFor == .light, isForDark: wallpaper.isFor == .dark))
-                }
-                if let outputFileName = showSavePanel(){
-                    do {
-                        try wallpaperGenerator.generate(pictureInfos: pictureInfos, baseURL: URL(string: "/")!, outputFileName: outputFileName)
-                    } catch (let error as WallpapperError) {
-                        showErrorMessage = true
-                        errorMessage = "Unexpected error occurs: \(error.message)"
-                    } catch {
-                        showErrorMessage = true
-                        errorMessage = "Really Unexpected error occurs: \(error)"
-                    }
-                }
-            } label: {
-                Label {
-                    Text("Save Wallpaper")
-                } icon: {
-                    Image(systemName: "square.and.arrow.up")
-                }
-            }
-            .alert(isPresented: $showErrorMessage) {
-                Alert(title: Text("An Error Occured"), message: Text(errorMessage), dismissButton: .cancel())
-            }
+            SubmitButton(wallpapers: wallpapers)
+            .padding(.bottom)
         }
     }
 }
