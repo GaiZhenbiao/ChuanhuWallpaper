@@ -18,8 +18,8 @@ struct TimeWallpaperView: View {
     let wallpaperGenerator = WallpaperGenerator()
     
     var body: some View {
-        ScrollView{
-            HStack {
+        VStack {
+            ScrollView {
                 VStack {
                     ForEach(0..<wallpapers.count, id: \.self) { index in
                         HStack {
@@ -57,48 +57,63 @@ struct TimeWallpaperView: View {
                                     }
                                 }
                             }
+                            .frame(maxWidth: 300)
                         }
+                        .frame(maxWidth: .infinity)
                     }
+                }
+                .padding()
+                HStack {
+                    FilePicker(types: [.image], allowMultiple: false) { urls in
+                        //                    if let filepath = urls[0].path().removingPercentEncoding{
+                        //                        wallpapers.append(WallpaperImage(fileName: filepath))
+                        //                    }
+                        let fileURL = urls[0]
+                        do {
+                            let inputFileContents = try Data(contentsOf: fileURL)
+                            let locationExtractor = LocationExtractor()
+                            let imageCreateDate = try locationExtractor.extractTime(imageData: inputFileContents)
+                            wallpapers.append(WallpaperImage(fileName: fileURL.path, time: imageCreateDate))
+                        } catch (let error) where "\(error)" == "missingCreationDate" {
+                            wallpapers.append(WallpaperImage(fileName: fileURL.path))
+                        } catch (let error as WallpapperError) {
+                            showErrorMessage = true
+                            errorMessage = "Unexpected error occurs: \(error)"
+                        } catch {
+                            showErrorMessage = true
+                            errorMessage = "oops: \(error)"
+                        }
+                    } label: {
+                        ZStack {
+                            Image(systemName: "photo.on.rectangle")
+                            Image(systemName: "plus.circle.fill")
+                                .font(.system(size: 8))
+                                .offset(x:8,y:-5)
+                        }
+                        Text("Add New Picture")
+                        //Label("Add New Picture", systemImage: "doc.badge.plus")
+                    }
+                    HelpButton {
+                        self.showPopover.toggle()
+                    }
+                    .popover(isPresented: self.$showPopover, arrowEdge: .bottom) {
+                        VStack {
+                            Text("Pictures switch based on OS time. \nIf set to primary, the image will be visible after creating the heic file. If set to \"is for Light\", picture will be displayed when user chose \"Light (static)\". The same is true for \"is for Dark\". \nTime is most relevant in hour.")
+                        }
+                        .frame(width: 200)
+                        .padding()
+                    }.padding(.leading, 10)
                 }
             }
-            .padding()
-            HStack {
-                FilePicker(types: [.image], allowMultiple: false) { urls in
-//                    if let filepath = urls[0].path().removingPercentEncoding{
-//                        wallpapers.append(WallpaperImage(fileName: filepath))
-//                    }
-                    let fileURL = urls[0]
-                    do {
-                        let inputFileContents = try Data(contentsOf: fileURL)
-                        let locationExtractor = LocationExtractor()
-                        let imageCreateDate = try locationExtractor.extractTime(imageData: inputFileContents)
-                        wallpapers.append(WallpaperImage(fileName: fileURL.path, time: imageCreateDate))
-                    } catch (let error) where "\(error)" == "missingCreationDate" {
-                        wallpapers.append(WallpaperImage(fileName: fileURL.path))
-                    } catch (let error as WallpapperError) {
-                        showErrorMessage = true
-                        errorMessage = "Unexpected error occurs: \(error)"
-                    } catch {
-                        showErrorMessage = true
-                        errorMessage = "oops: \(error)"
-                    }
-                } label: {
-                    Label("Add New Picture", systemImage: "doc.badge.plus")
+            Spacer()
+            Divider().frame(maxWidth: 500).padding(.top,10)
+            VStack {
+                HStack {
+                    SubmitButton(wallpapers: wallpapers, disableSubmit: wallpapers.count < 2)
                 }
-                SubmitButton(wallpapers: wallpapers, disableSubmit: wallpapers.count < 2)
-                HelpButton {
-                    self.showPopover.toggle()
-                }
-                .popover(isPresented: self.$showPopover, arrowEdge: .bottom) {
-                    VStack {
-                        Text("Pictures switch based on OS time. If set to primary, the image will be visible after creating the heic file. If set to \"is for Light\", picture will be displayed when user chose \"Light (static)\". The same is true for \"is for Dark\". Time is most relevant in hour.")
-                    }
-                    .frame(width: 200)
-                    .padding()
-                }
+                Text("\(wallpapers.count) image(s)")
+                    .padding(.bottom)
             }
-            Text("\(wallpapers.count) image(s)")
-                .padding(.bottom)
         }
     }
 }
