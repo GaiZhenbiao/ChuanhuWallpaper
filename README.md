@@ -16,7 +16,7 @@ A GUI for [Wallpapper](https://github.com/mczachurski/wallpapper), generates dyn
 
 [下载](https://www.icloud.com.cn/iclouddrive/03eLDbNObIa6N8b-4ghD7MWOw#Earth_View)
 
-![Earth View](resources/Earth View.jpeg)
+![Earth View](resources/Earth.jpeg)
 
 ### Hello（按亮暗色模式切换）
 
