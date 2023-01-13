@@ -18,45 +18,52 @@ struct AppearanceWallpaperView: View {
     let wallpaperGenerator = WallpaperGenerator()
     
     var body: some View {
-        ScrollView{
-            HStack {
-                Image(nsImage: NSImage(contentsOfFile: wallpapers[0].fileName) ?? NSImage(imageLiteralResourceName: "noimage.jpg"))
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 150, height: 150)
-                VStack(alignment: .leading) {
-                    Text("Light Image")
-                        .font(.headline)
-//                    Text(wallpapers[0].fileName)
-                    Toggle("Is Primary", isOn: self.$wallpapers[0].isPrimary)
-                    FilePicker(types: [.image], allowMultiple: false) { urls in
-                        let filepath = urls[0].path
-                        wallpapers[0].fileName = filepath.removingPercentEncoding!
-                        currentSelectedNum += 1
-                    } label: {
-                        Label("Change Picture", systemImage: "doc.badge.plus")
+        VStack {
+            ScrollView{
+                HStack {
+                    Spacer()
+                    Image(nsImage: NSImage(contentsOfFile: wallpapers[0].fileName) ?? NSImage(imageLiteralResourceName: "noimage.jpg"))
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 150, height: 150)
+                    VStack(alignment: .leading) {
+                        Text("Light Image")
+                            .font(.headline)
+                        //                    Text(wallpapers[0].fileName)
+                        Toggle("Is Primary", isOn: self.$wallpapers[0].isPrimary)
+                        FilePicker(types: [.image], allowMultiple: false) { urls in
+                            let filepath = urls[0].path
+                            wallpapers[0].fileName = filepath.removingPercentEncoding!
+                            currentSelectedNum += 1
+                        } label: {
+                            Label("Change Picture", systemImage: "doc.badge.plus")
+                        }
                     }
+                    Spacer()
+                }
+                HStack {
+                    Spacer()
+                    Image(nsImage: NSImage(contentsOfFile: wallpapers[1].fileName) ?? NSImage(imageLiteralResourceName: "noimage.jpg"))
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 150, height: 150)
+                    Form {
+                        Text("Dark Image")
+                            .font(.headline)
+                        Toggle("Is Primary", isOn: self.$wallpapers[1].isPrimary)
+                        FilePicker(types: [.image], allowMultiple: false) { urls in
+                            let filepath = urls[0].path
+                            wallpapers[1].fileName = filepath
+                            currentSelectedNum += 1
+                        } label: {
+                            Label("Change Picture", systemImage: "doc.badge.plus")
+                        }
+                    }
+                    Spacer()
                 }
             }
-            HStack {
-                Image(nsImage: NSImage(contentsOfFile: wallpapers[1].fileName) ?? NSImage(imageLiteralResourceName: "noimage.jpg"))
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 150, height: 150)
-                Form {
-                    Text("Dark Image")
-                        .font(.headline)
-                    Toggle("Is Primary", isOn: self.$wallpapers[1].isPrimary)
-                    FilePicker(types: [.image], allowMultiple: false) { urls in
-                        let filepath = urls[0].path
-                        wallpapers[1].fileName = filepath
-                        currentSelectedNum += 1
-                    } label: {
-                        Label("Change Picture", systemImage: "doc.badge.plus")
-                    }
-                }
-            }
-            .padding()
+            .frame(maxWidth: .infinity)
+            Spacer()
             SubmitButton(wallpapers: wallpapers, disableSubmit: currentSelectedNum < 2)
             .padding(.bottom)
         }
