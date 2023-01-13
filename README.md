@@ -12,12 +12,6 @@ A GUI for [Wallpapper](https://github.com/mczachurski/wallpapper), generates dyn
 
 以下是壁纸示例：
 
-### 地球（按日照切换，来自 wallpapper）
-
-[下载](https://www.icloud.com.cn/iclouddrive/03eLDbNObIa6N8b-4ghD7MWOw#Earth_View)
-
-![Earth View](resources/Earth.jpeg)
-
 ### Hello（按亮暗色模式切换）
 
 由 [Basic Apple Guy](https://basicappleguy.com/basicappleblog/hello-20) 绘制。[下载](https://www.icloud.com.cn/iclouddrive/012EtxZCzufN9Ci4RurixpoUg#hello)
@@ -29,6 +23,12 @@ A GUI for [Wallpapper](https://github.com/mczachurski/wallpapper), generates dyn
 这是联想小新的壁纸。[下载](https://www.icloud.com.cn/iclouddrive/051Yu23joU5LfVuy3Wd5YALrQ)
 
 ![夸父](resources/夸父.jpeg)
+
+### 地球（按日照切换，来自 wallpapper）
+
+[下载](https://www.icloud.com.cn/iclouddrive/03eLDbNObIa6N8b-4ghD7MWOw#Earth_View)
+
+![Earth View](resources/Earth.jpeg)
 
 ## 编译与安装
 
