@@ -24,6 +24,12 @@ A GUI for [Wallpapper](https://github.com/mczachurski/wallpapper), generates dyn
 
 ![Hello](resources/hello.jpeg)
 
+### 夸父（按亮暗色模式切换）
+
+这是联想小新的壁纸。[下载](https://www.icloud.com.cn/iclouddrive/051Yu23joU5LfVuy3Wd5YALrQ)
+
+![夸父](resources/夸父.jpeg)
+
 ## 编译与安装
 
 你可以去本项目的 [release 页面](https://github.com/GaiZhenbiao/ChuanhuWallpaper/releases/tag/v1.6) 下载最新版本。
