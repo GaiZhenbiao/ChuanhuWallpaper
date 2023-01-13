@@ -98,7 +98,7 @@ struct TimeWallpaperView: View {
                     }
                     .popover(isPresented: self.$showPopover, arrowEdge: .bottom) {
                         VStack {
-                            Text("Pictures switch based on OS time. \nIf set to primary, the image will be visible after creating the heic file. If set to \"is for Light\", picture will be displayed when user chose \"Light (static)\". The same is true for \"is for Dark\". \nTime is most relevant in hour.")
+                            Text("Pictures switch based on OS time. \nIf set to primary, the image will be visible after creating the heic file. \nIf set to \"is for Light\", picture will be displayed when user chose \"Light (static)\". The same is true for \"is for Dark\". \nTime is most relevant in hour.")
                         }
                         .frame(width: 200)
                         .padding()
