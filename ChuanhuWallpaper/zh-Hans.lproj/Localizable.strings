@@ -14,7 +14,7 @@
 "Dark" = "暗色";
 "Light" = "亮色";
 "None" = "无";
-"Altitude" = "高度";
+"Altitude" = "高度角";
 "Azimuth" = "方位角";
 "Move Up" = "上移";
 "Move Down" = "下移";
@@ -30,7 +30,7 @@
 "Dark Image" = "暗色图像";
 "CFBundleDisplayName" = "川虎壁纸";
 "Pictures switch based on OS time. If set to primary, the image will be visible after creating the heic file. If set to \"is for Light\", picture will be displayed when user chose \"Light (static)\". The same is true for \"is for Dark\". Time is most relevant in hour." = "选择“用作缩略图”之后，图片将作为 heic 文件的缩略图，QuickLook 看到的也是这张。将图像“用作亮色”之后，如果用户选择“浅色（静态）”，看到的就是这张图像。“用作暗色”与之类似。图像将会按时间切换，切换的精度为小时，更精细的时间可能不准确。";
-"The primary image will be visible after creating heic file. If image was set to Light, it will be displayed when user chose \"Light (static)\" wallpaper. The same happened when set to Dark. Altitude is the angle between the Sun and the observer's local horizon. Azimuth  is the angle of the Sun around the horizon." = "选择“用作缩略图”之后，图片将作为 heic 文件的缩略图，QuickLook 看到的也是这张。将图像“用作亮色”之后，如果用户选择“浅色（静态）”，看到的就是这张图像。“用作暗色”与之类似。图像将会按照太阳照射情况切换，这也是 macOS 自带多色壁纸的切换方式。“高度”指的是太阳和观察者本地地平线之间的角度。“方位角”指的是太阳环绕地平线的角度。";
+"The primary image will be visible after creating heic file. If image was set to Light, it will be displayed when user chose \"Light (static)\" wallpaper. The same happened when set to Dark. Altitude is the angle between the Sun and the observer's local horizon. Azimuth  is the angle of the Sun around the horizon." = "选择“用作缩略图”之后，图片将作为 heic 文件的缩略图，QuickLook 看到的也是这张。将图像“用作亮色”之后，如果用户选择“浅色（静态）”，看到的就是这张图像。“用作暗色”与之类似。图像将会按照太阳照射情况切换，这也是 macOS 自带多色壁纸的切换方式。“高度角”指的是是天体和观测者所在地的地平线的夹角。“方位角”指的是沿着地平线测量的角度。参见“地平坐标系”的百科。";
 "About Chuanhu Wallpaper" = "关于川虎壁纸";
 "Huge thanks to @Keldos for creating this app's icon!" = "特别感谢 @Keldos，制作了本 App 的图标！";
 "Made by @TuchuanHuhuhu" = "Made by @土川虎虎虎";

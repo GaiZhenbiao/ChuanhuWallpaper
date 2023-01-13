@@ -65,6 +65,7 @@ struct SolarWallpaperView: View {
                 FilePicker(types: [.image], allowMultiple: false) { urls in
                     if let filepath = urls[0].path().removingPercentEncoding{
                         wallpapers.append(WallpaperImage(fileName: filepath))
+                        
                     }
                 } label: {
                     Label("Add New Picture", systemImage: "doc.badge.plus")
