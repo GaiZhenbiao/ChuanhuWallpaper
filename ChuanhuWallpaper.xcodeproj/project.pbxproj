@@ -341,7 +341,7 @@
 				CODE_SIGN_ENTITLEMENTS = ChuanhuWallpaper/ChuanhuWallpaper.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 7;
 				DEVELOPMENT_ASSET_PATHS = "\"ChuanhuWallpaper/Preview Content\"";
 				DEVELOPMENT_TEAM = KWS26AWJ45;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -369,7 +369,7 @@
 				CODE_SIGN_ENTITLEMENTS = ChuanhuWallpaper/ChuanhuWallpaper.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 7;
 				DEVELOPMENT_ASSET_PATHS = "\"ChuanhuWallpaper/Preview Content\"";
 				DEVELOPMENT_TEAM = KWS26AWJ45;
 				ENABLE_HARDENED_RUNTIME = YES;

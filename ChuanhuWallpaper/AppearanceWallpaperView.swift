@@ -58,7 +58,7 @@ struct AppearanceWallpaperView: View {
                 }
             }
             .padding()
-            SubmitButton(wallpapers: wallpapers)
+            SubmitButton(wallpapers: wallpapers, disableSubmit: currentSelectedNum < 2)
             .padding(.bottom)
         }
     }

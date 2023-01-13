@@ -82,7 +82,7 @@ struct SolarWallpaperView: View {
                 } label: {
                     Label("Add New Picture", systemImage: "doc.badge.plus")
                 }
-                SubmitButton(wallpapers: wallpapers)
+                SubmitButton(wallpapers: wallpapers, disableSubmit: wallpapers.count < 2)
                 
                 HelpButton {
                     self.showPopover.toggle()
