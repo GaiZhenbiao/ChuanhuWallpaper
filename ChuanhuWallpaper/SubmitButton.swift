@@ -23,7 +23,7 @@ struct SubmitButton: View {
             }
             if let outputFileName = showSavePanel(){
                 do {
-                    try wallpaperGenerator.generate(pictureInfos: pictureInfos, baseURL: URL(string: "/")!, outputFileName: outputFileName)
+                    try wallpaperGenerator.generate(pictureInfos: pictureInfos, baseURL: URL(string: "/")!, outputFileName: outputFileName.path)
                 } catch (let error as WallpapperError) {
                     showErrorMessage = true
                     errorMessage = "Unexpected error occurs: \(error.message)"

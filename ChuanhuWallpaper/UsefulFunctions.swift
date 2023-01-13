@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-func showSavePanel() -> String? {
+func showSavePanel() -> URL? {
     let savePanel = NSSavePanel()
     savePanel.allowedContentTypes = [.heic]
     savePanel.canCreateDirectories = true
@@ -18,7 +18,7 @@ func showSavePanel() -> String? {
     savePanel.nameFieldLabel = "Wallpaper file name:"
 
     let response = savePanel.runModal()
-    return response == .OK ? savePanel.url?.path().removingPercentEncoding : nil
+    return response == .OK ? savePanel.url : nil
 }
 
 func loadImageFromDiskWith(fileName: String) -> NSImage? {

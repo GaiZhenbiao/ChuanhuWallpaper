@@ -69,9 +69,9 @@ struct SolarWallpaperView: View {
                         let imageLocation = try locationExtractor.extract(imageData: inputFileContents)
                         let sunCalculations = SunCalculations(imageLocation: imageLocation)
                         let position = sunCalculations.getSunPosition()
-                        wallpapers.append(WallpaperImage(fileName: fileURL.path().removingPercentEncoding!, altitude: position.altitude, azimuth: position.azimuth))
+                        wallpapers.append(WallpaperImage(fileName: fileURL.path, altitude: position.altitude, azimuth: position.azimuth))
                     } catch (let error) where "\(error)" == "missingLatitude" {
-                        wallpapers.append(WallpaperImage(fileName: fileURL.path().removingPercentEncoding!))
+                        wallpapers.append(WallpaperImage(fileName: fileURL.path))
                     } catch (let error as WallpapperError) {
                         showErrorMessage = true
                         errorMessage = "Unexpected error occurs: \(error.message)"

@@ -72,9 +72,9 @@ struct TimeWallpaperView: View {
                         let inputFileContents = try Data(contentsOf: fileURL)
                         let locationExtractor = LocationExtractor()
                         let imageCreateDate = try locationExtractor.extractTime(imageData: inputFileContents)
-                        wallpapers.append(WallpaperImage(fileName: fileURL.path().removingPercentEncoding!, time: imageCreateDate))
+                        wallpapers.append(WallpaperImage(fileName: fileURL.path, time: imageCreateDate))
                     } catch (let error) where "\(error)" == "missingCreationDate" {
-                        wallpapers.append(WallpaperImage(fileName: fileURL.path().removingPercentEncoding!))
+                        wallpapers.append(WallpaperImage(fileName: fileURL.path))
                     } catch (let error as WallpapperError) {
                         showErrorMessage = true
                         errorMessage = "Unexpected error occurs: \(error)"

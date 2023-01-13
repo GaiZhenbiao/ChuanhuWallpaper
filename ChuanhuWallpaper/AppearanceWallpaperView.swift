@@ -27,12 +27,12 @@ struct AppearanceWallpaperView: View {
                 VStack(alignment: .leading) {
                     Text("Light Image")
                         .font(.headline)
+//                    Text(wallpapers[0].fileName)
                     Toggle("Is Primary", isOn: self.$wallpapers[0].isPrimary)
                     FilePicker(types: [.image], allowMultiple: false) { urls in
-                        if let filepath = urls[0].path().removingPercentEncoding{
-                            wallpapers[0].fileName = filepath
-                            currentSelectedNum += 1
-                        }
+                        let filepath = urls[0].path
+                        wallpapers[0].fileName = filepath.removingPercentEncoding!
+                        currentSelectedNum += 1
                     } label: {
                         Label("Change Picture", systemImage: "doc.badge.plus")
                     }
@@ -48,10 +48,9 @@ struct AppearanceWallpaperView: View {
                         .font(.headline)
                     Toggle("Is Primary", isOn: self.$wallpapers[1].isPrimary)
                     FilePicker(types: [.image], allowMultiple: false) { urls in
-                        if let filepath = urls[0].path().removingPercentEncoding{
-                            wallpapers[1].fileName = filepath
-                            currentSelectedNum += 1
-                        }
+                        let filepath = urls[0].path
+                        wallpapers[1].fileName = filepath
+                        currentSelectedNum += 1
                     } label: {
                         Label("Change Picture", systemImage: "doc.badge.plus")
                     }

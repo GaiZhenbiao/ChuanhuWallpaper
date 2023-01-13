@@ -16,7 +16,7 @@ struct ChuanhuWallpaperApp: App {
             ContentView()
                 .frame(minWidth: 300, maxWidth: .infinity, minHeight: 200, maxHeight: .infinity)
         }
-        .defaultSize(CGSize(width: 350, height: 500))
+//        .defaultSize(CGSize(width: 350, height: 500))
         .commands {
                     CommandGroup(replacing: .appInfo) {
                         Button("About Chuanhu Wallpaper") {
