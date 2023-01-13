@@ -34,7 +34,7 @@ A GUI for [Wallpapper](https://github.com/mczachurski/wallpapper), generates dyn
 
 你可以去本项目的 [release 页面](https://github.com/GaiZhenbiao/ChuanhuWallpaper/releases/tag/v1.6) 下载最新版本。
 
-最低系统要求 macOS 13.0，Xcode14。
+最低系统要求 macOS 11.0 Big Sur，本项目使用 Xcode14 开发。
 
 ## 贡献者
 
