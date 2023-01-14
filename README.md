@@ -40,5 +40,5 @@ A GUI for [Wallpapper](https://github.com/mczachurski/wallpapper), generates dyn
 
 [土川虎虎虎](https://space.bilibili.com/29125536)，开发者
 
-[Keldos](https://github.com/Keldos-Li)，绘制了本 App 的图标
+[Keldos](https://github.com/Keldos-Li)，绘制了本 App 的图标，贡献者
 
