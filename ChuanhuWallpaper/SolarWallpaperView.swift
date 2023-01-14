@@ -14,6 +14,10 @@ struct SolarWallpaperView: View {
     @State var showErrorMessage = false
     @State var errorMessage = ""
     @State var showPopover = false
+    var numbers: [Int] {
+        let numbers: [Int] = Array(0..<wallpapers.count)
+        return numbers
+    }
     let wallpaperGenerator = WallpaperGenerator()
     
     var body: some View {
@@ -25,7 +29,7 @@ struct SolarWallpaperView: View {
                         Text("No images yet.")
                             .foregroundColor(.secondary)
                     }
-                    ForEach(0..<wallpapers.count, id: \.self) { index in
+                    ForEach(numbers, id: \.self) { index in
                         HStack {
                             Image(nsImage: NSImage(contentsOfFile: wallpapers[index].fileName) ?? NSImage(imageLiteralResourceName: "noimage.jpg"))
                                 .resizable()
