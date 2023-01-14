@@ -54,3 +54,8 @@ A GUI for [Wallpapper](https://github.com/mczachurski/wallpapper), generates dyn
 
 ![Cyberpunk](resources/cyberpunk.png)
 
+### Apple Park（按亮暗色模式切换）
+
+由 Basic Apple Guy 创作。[下载](https://www.icloud.com.cn/iclouddrive/0f0WOzeKYpARy9_8kAIJ7nuxg#ApplePark)
+
+![Apple Park](resources/ApplePark.png)
