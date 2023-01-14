@@ -15,28 +15,54 @@ struct windowSize {
 }
 
 struct ContentView: View {
+    
     private enum Tabs: Hashable {
         case solar, time, appearance
     }
+    
+    @State private var selectedTab: Tabs? = Tabs.appearance
+    
     var body: some View {
-        TabView {
-            AppearanceWallpaperView()
-                .tabItem {
-                    Label("Appearance", systemImage: "star")
+        NavigationView {
+            List {
+                NavigationLink(tag: Tabs.appearance, selection: $selectedTab) {
+                    AppearanceWallpaperView()
+                        .navigationTitle("Appearance")
+                } label: {
+                    Label("Appearance", systemImage: "moon.circle")
                 }
-                .tag(Tabs.appearance)
-            SolarWallpaperView()
-                .tabItem {
-                    Label("Solar", systemImage: "gear")
+                NavigationLink(tag: Tabs.solar, selection: $selectedTab) {
+                    SolarWallpaperView()
+                        .navigationTitle("Solar")
+                } label: {
+                    Label("Solar", systemImage: "sun.haze")
                 }
-                .tag(Tabs.solar)
-            TimeWallpaperView()
-                .tabItem {
-                    Label("Time", systemImage: "star")
+                NavigationLink(tag: Tabs.time, selection: $selectedTab) {
+                    TimeWallpaperView()
+                        .navigationTitle("Time")
+                } label: {
+                    Label("Time", systemImage: "clock")
                 }
-                .tag(Tabs.time)
+            }
+            .listStyle(.sidebar)
         }
-        .padding()
+//        TabView {
+//            AppearanceWallpaperView()
+//                .tabItem {
+//                    Label("Appearance", systemImage: "star")
+//                }
+//                .tag(Tabs.appearance)
+//            SolarWallpaperView()
+//                .tabItem {
+//                    Label("Solar", systemImage: "gear")
+//                }
+//                .tag(Tabs.solar)
+//            TimeWallpaperView()
+//                .tabItem {
+//                    Label("Time", systemImage: "star")
+//                }
+//                .tag(Tabs.time)
+//        }
     }
 }
 

@@ -14,9 +14,10 @@ struct ChuanhuWallpaperApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
-                .frame(minWidth: 300, maxWidth: .infinity, minHeight: 200, maxHeight: .infinity)
+                .frame(minWidth: 550, minHeight: 200, maxHeight: .infinity)
         }
 //        .defaultSize(CGSize(width: 350, height: 500))
+        .windowToolbarStyle(UnifiedCompactWindowToolbarStyle())
         .commands {
                     CommandGroup(replacing: .appInfo) {
                         Button("About Chuanhu Wallpaper") {

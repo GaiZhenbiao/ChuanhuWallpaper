@@ -82,19 +82,13 @@
 			children = (
 				1207B47C296EF60200B5D36D /* ChuanhuWallpaperApp.swift */,
 				12BF6A5729704133001F0EB4 /* AppDelegate.swift */,
-				1207B47E296EF60200B5D36D /* ContentView.swift */,
+				121399DB2972560E00780368 /* View */,
+				121399DC2972563100780368 /* Components */,
 				1207B4AB2970055000B5D36D /* Localizable.strings */,
-				1207B480296EF60300B5D36D /* Assets.xcassets */,
-				1207B494296EF74B00B5D36D /* SolarWallpaperView.swift */,
-				129D354D29715C2400240248 /* SubmitButton.swift */,
-				1207B496296EF75F00B5D36D /* TimeWallpaperView.swift */,
-				129D35512971603100240248 /* AddPictureButton.swift */,
-				1207B498296EF77000B5D36D /* AppearanceWallpaperView.swift */,
-				1207B485296EF60300B5D36D /* ChuanhuWallpaper.entitlements */,
 				1207B482296EF60300B5D36D /* Preview Content */,
-				1207B49A296F09F000B5D36D /* ImageModel.swift */,
-				1207B4A3296FEB3400B5D36D /* UsefulFunctions.swift */,
 				1207B49F296FC77700B5D36D /* noimage.jpg */,
+				1207B480296EF60300B5D36D /* Assets.xcassets */,
+				1207B485296EF60300B5D36D /* ChuanhuWallpaper.entitlements */,
 				127BF6B12970430100FB20B7 /* wallpapper */,
 			);
 			path = ChuanhuWallpaper;
@@ -106,6 +100,28 @@
 				1207B483296EF60300B5D36D /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		121399DB2972560E00780368 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1207B47E296EF60200B5D36D /* ContentView.swift */,
+				1207B494296EF74B00B5D36D /* SolarWallpaperView.swift */,
+				1207B496296EF75F00B5D36D /* TimeWallpaperView.swift */,
+				1207B498296EF77000B5D36D /* AppearanceWallpaperView.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		121399DC2972563100780368 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				129D354D29715C2400240248 /* SubmitButton.swift */,
+				129D35512971603100240248 /* AddPictureButton.swift */,
+				1207B49A296F09F000B5D36D /* ImageModel.swift */,
+				1207B4A3296FEB3400B5D36D /* UsefulFunctions.swift */,
+			);
+			name = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -347,13 +363,13 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = "Chuanhu Wallpaper";
+				INFOPLIST_KEY_CFBundleDisplayName = "川虎壁纸";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MACOSX_DEPLOYMENT_TARGET = 11.3;
 				MARKETING_VERSION = 1.9;
 				PRODUCT_BUNDLE_IDENTIFIER = com.tuchuanhuhuhu.ChuanhuWallpaper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -376,13 +392,13 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = "Chuanhu Wallpaper";
+				INFOPLIST_KEY_CFBundleDisplayName = "川虎壁纸";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MACOSX_DEPLOYMENT_TARGET = 11.3;
 				MARKETING_VERSION = 1.9;
 				PRODUCT_BUNDLE_IDENTIFIER = com.tuchuanhuhuhu.ChuanhuWallpaper;
 				PRODUCT_NAME = "$(TARGET_NAME)";

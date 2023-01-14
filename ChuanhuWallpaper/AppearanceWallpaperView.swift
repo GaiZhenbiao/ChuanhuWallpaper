@@ -63,9 +63,12 @@ struct AppearanceWallpaperView: View {
                 }
             }
             .frame(maxWidth: .infinity)
-            Spacer()
-            SubmitButton(wallpapers: wallpapers, disableSubmit: currentSelectedNum < 2)
             .padding(.bottom)
+        }
+        .toolbar {
+            ToolbarItemGroup {
+                SubmitButton(wallpapers: wallpapers, disableSubmit: currentSelectedNum < 2)
+            }
         }
     }
 }
