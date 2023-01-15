@@ -24,9 +24,6 @@ A GUI for [Wallpapper](https://github.com/mczachurski/wallpapper), generating dy
 
 ![Bloom](resources/bloom.png)
 
-**点击“详细信息”查看更多示例壁纸**
-
-<details>
 
 ### 夸父（按亮暗色模式切换）
 
@@ -40,7 +37,7 @@ A GUI for [Wallpapper](https://github.com/mczachurski/wallpapper), generating dy
 
 ![Earth View](resources/Earth.jpeg)
 
-### Cyberpunk（按日照切换）
+### Cyberpunk 2077（按日照切换）
 
 来自 wallpapper。[下载](https://www.icloud.com.cn/iclouddrive/00dh81vDc7EFzsdiMrJZUdbTA#cyberpunk)
 
@@ -51,7 +48,12 @@ A GUI for [Wallpapper](https://github.com/mczachurski/wallpapper), generating dy
 由 Basic Apple Guy 创作。[下载](https://www.icloud.com.cn/iclouddrive/0f0WOzeKYpARy9_8kAIJ7nuxg#ApplePark)
 
 ![Apple Park](resources/ApplePark.png)
-</details>
+
+### Pro Display XDR（按亮暗色模式切换）
+
+[下载](https://www.icloud.com.cn/iclouddrive/0acSGBlQ9UCqx0aRjloJynjQg#ProDisplayXDR)
+
+![Pro Display XDR](resources/ProDisplayXDR.png)
 
 ## 编译与安装
 
