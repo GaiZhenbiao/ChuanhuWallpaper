@@ -34,15 +34,15 @@ A GUI for [Wallpapper](https://github.com/mczachurski/wallpapper), generating dy
 
 ![夸父](resources/夸父.jpeg)
 
-### 地球（按日照切换，来自 wallpapper）
+### 地球（按日照切换）
 
-[下载](https://www.icloud.com.cn/iclouddrive/03eLDbNObIa6N8b-4ghD7MWOw#Earth_View)
+来自 wallpapper。[下载](https://www.icloud.com.cn/iclouddrive/03eLDbNObIa6N8b-4ghD7MWOw#Earth_View)
 
 ![Earth View](resources/Earth.jpeg)
 
-### Cyberpunk（按日照切换，来自 wallpapper）
+### Cyberpunk（按日照切换）
 
-[下载](https://www.icloud.com.cn/iclouddrive/03eLDbNObIa6N8b-4ghD7MWOw#Earth_View)
+来自 wallpapper。[下载](https://www.icloud.com.cn/iclouddrive/00dh81vDc7EFzsdiMrJZUdbTA#cyberpunk)
 
 ![Cyberpunk](resources/cyberpunk.png)
 
