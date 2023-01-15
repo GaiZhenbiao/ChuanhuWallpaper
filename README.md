@@ -55,9 +55,13 @@ A GUI for [Wallpapper](https://github.com/mczachurski/wallpapper), generating dy
 
 ## 编译与安装
 
-你可以去本项目的 [release 页面](https://github.com/GaiZhenbiao/ChuanhuWallpaper/releases/latest) 下载最新版本。
+您可以前往本项目的 [release 页面](https://github.com/GaiZhenbiao/ChuanhuWallpaper/releases/latest) 下载软件的最新版本。软件最低系统要求为 macOS 11.0 Big Sur。
 
-最低系统要求 macOS 11.0 Big Sur，本项目使用 Xcode14 开发。
+本项目使用 Xcode14 开发。
+
+## 已知问题
+
+在为最低系统版本 macOS 11.0 编译的 App 中删除图像可能导致 App 崩溃。为 macOS 12.0 及更高版本编译的 App 无此问题。更多信息请查看发布页面。
 
 ## 贡献者
 
