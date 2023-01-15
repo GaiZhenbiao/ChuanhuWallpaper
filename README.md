@@ -55,7 +55,7 @@ A GUI for [Wallpapper](https://github.com/mczachurski/wallpapper), generating dy
 
 ## 编译与安装
 
-你可以去本项目的 [release 页面](https://github.com/GaiZhenbiao/ChuanhuWallpaper/releases/tag/v1.6) 下载最新版本。
+你可以去本项目的 [release 页面](https://github.com/GaiZhenbiao/ChuanhuWallpaper/releases/latest) 下载最新版本。
 
 最低系统要求 macOS 11.0 Big Sur，本项目使用 Xcode14 开发。
 
