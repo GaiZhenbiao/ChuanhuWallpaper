@@ -24,7 +24,10 @@ A GUI for [Wallpapper](https://github.com/mczachurski/wallpapper), generating dy
 
 ![Bloom](resources/bloom.png)
 
+**点击“详细信息”查看更多示例壁纸**
+
 <details>
+
 ### 夸父（按亮暗色模式切换）
 
 这是联想小新的壁纸。[下载](https://www.icloud.com.cn/iclouddrive/051Yu23joU5LfVuy3Wd5YALrQ)
