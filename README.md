@@ -2,7 +2,9 @@
 
 # 川虎壁纸 Chuanhu Wallpaper
 
-[![Swift 5.2](https://img.shields.io/badge/Swift-5.2-orange.svg?style=flat)](ttps://developer.apple.com/swift/)  [![Platforms OS X \| Linux](https://img.shields.io/badge/Platforms-macOS%20-lightgray.svg?style=flat)](https://developer.apple.com/swift/) 
+[![Swift 5.2](https://img.shields.io/badge/Swift-5.2-orange.svg?style=flat)](https://developer.apple.com/swift/)
+[![Platforms OS X \| Linux](https://img.shields.io/badge/Platforms-macOS%20-lightgray.svg?style=flat)](https://developer.apple.com/swift/)
+[![GitHub downloads](https://img.shields.io/github/downloads/GaiZhenbiao/ChuanhuWallpaper/total?)](https://github.com/GaiZhenbiao/ChuanhuWallpaper/releases)
 
 A GUI for [Wallpapper](https://github.com/mczachurski/wallpapper), generating dynamic wallpapers for macOS.
 
