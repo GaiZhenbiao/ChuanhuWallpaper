@@ -6,9 +6,9 @@
 [![Platforms OS X \| Linux](https://img.shields.io/badge/Platforms-macOS%20-lightgray.svg?style=flat)](https://developer.apple.com/swift/)
 [![GitHub downloads](https://img.shields.io/github/downloads/GaiZhenbiao/ChuanhuWallpaper/total?)](https://github.com/GaiZhenbiao/ChuanhuWallpaper/releases)
 
-A GUI for [Wallpapper](https://github.com/mczachurski/wallpapper), generating dynamic wallpapers for macOS.
+A GUI for [Wallpapper](https://github.com/mczachurski/wallpapper), generating dynamic wallpapers for macOS in `.heic` format. Wallpapers can switch accroding to system appearance, time or sun. This app now supports English and Chinese.
 
-本项目为 [Wallpapper](https://github.com/mczachurski/wallpapper) 提供了图形界面，能为 macOS 生成 `.heic` 格式的动态壁纸，壁纸可按亮暗色模式、太阳照射情况和时间进行自动切换。
+本项目为 [Wallpapper](https://github.com/mczachurski/wallpapper) 提供了图形界面，能为 macOS 生成 `.heic` 格式的动态壁纸，壁纸可按亮暗色模式、太阳照射情况和时间进行自动切换。此 App 目前支持中文和英语。
 
 ## 示例
 
