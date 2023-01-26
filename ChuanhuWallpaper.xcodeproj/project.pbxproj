@@ -11,8 +11,6 @@
 		1207B47F296EF60200B5D36D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1207B47E296EF60200B5D36D /* ContentView.swift */; };
 		1207B481296EF60300B5D36D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1207B480296EF60300B5D36D /* Assets.xcassets */; };
 		1207B484296EF60300B5D36D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1207B483296EF60300B5D36D /* Preview Assets.xcassets */; };
-		1207B48D296EF61C00B5D36D /* WallpapperLib in Frameworks */ = {isa = PBXBuildFile; productRef = 1207B48C296EF61C00B5D36D /* WallpapperLib */; };
-		1207B491296EF61C00B5D36D /* wallpapper-exif in Frameworks */ = {isa = PBXBuildFile; productRef = 1207B490296EF61C00B5D36D /* wallpapper-exif */; };
 		1207B495296EF74B00B5D36D /* SolarWallpaperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1207B494296EF74B00B5D36D /* SolarWallpaperView.swift */; };
 		1207B497296EF75F00B5D36D /* TimeWallpaperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1207B496296EF75F00B5D36D /* TimeWallpaperView.swift */; };
 		1207B499296EF77000B5D36D /* AppearanceWallpaperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1207B498296EF77000B5D36D /* AppearanceWallpaperView.swift */; };
@@ -24,6 +22,7 @@
 		129D354E29715C2400240248 /* SubmitButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 129D354D29715C2400240248 /* SubmitButton.swift */; };
 		129D35522971603100240248 /* AddPictureButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 129D35512971603100240248 /* AddPictureButton.swift */; };
 		12BF6A5829704133001F0EB4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12BF6A5729704133001F0EB4 /* AppDelegate.swift */; };
+		38273E842982C993002433F9 /* WallpapperLib in Frameworks */ = {isa = PBXBuildFile; productRef = 38273E832982C993002433F9 /* WallpapperLib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,9 +51,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				38273E842982C993002433F9 /* WallpapperLib in Frameworks */,
 				1207B49E296FAE6E00B5D36D /* FilePicker in Frameworks */,
-				1207B491296EF61C00B5D36D /* wallpapper-exif in Frameworks */,
-				1207B48D296EF61C00B5D36D /* WallpapperLib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,6 +64,7 @@
 			children = (
 				1207B47B296EF60200B5D36D /* ChuanhuWallpaper */,
 				1207B47A296EF60200B5D36D /* Products */,
+				38273E822982C993002433F9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -124,6 +123,13 @@
 			name = Components;
 			sourceTree = "<group>";
 		};
+		38273E822982C993002433F9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -141,9 +147,8 @@
 			);
 			name = ChuanhuWallpaper;
 			packageProductDependencies = (
-				1207B48C296EF61C00B5D36D /* WallpapperLib */,
-				1207B490296EF61C00B5D36D /* wallpapper-exif */,
 				1207B49D296FAE6E00B5D36D /* FilePicker */,
+				38273E832982C993002433F9 /* WallpapperLib */,
 			);
 			productName = ChuanhuWallpaper;
 			productReference = 1207B479296EF60200B5D36D /* ChuanhuWallpaper.app */;
@@ -175,7 +180,6 @@
 			);
 			mainGroup = 1207B470296EF60200B5D36D;
 			packageReferences = (
-				1207B48B296EF61C00B5D36D /* XCRemoteSwiftPackageReference "wallpapper" */,
 				1207B49C296FAE6E00B5D36D /* XCRemoteSwiftPackageReference "FilePicker" */,
 			);
 			productRefGroup = 1207B47A296EF60200B5D36D /* Products */;
@@ -433,14 +437,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		1207B48B296EF61C00B5D36D /* XCRemoteSwiftPackageReference "wallpapper" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/mczachurski/wallpapper";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.0.0;
-			};
-		};
 		1207B49C296FAE6E00B5D36D /* XCRemoteSwiftPackageReference "FilePicker" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/markrenaud/FilePicker.git";
@@ -452,20 +448,14 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		1207B48C296EF61C00B5D36D /* WallpapperLib */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 1207B48B296EF61C00B5D36D /* XCRemoteSwiftPackageReference "wallpapper" */;
-			productName = WallpapperLib;
-		};
-		1207B490296EF61C00B5D36D /* wallpapper-exif */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 1207B48B296EF61C00B5D36D /* XCRemoteSwiftPackageReference "wallpapper" */;
-			productName = "wallpapper-exif";
-		};
 		1207B49D296FAE6E00B5D36D /* FilePicker */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 1207B49C296FAE6E00B5D36D /* XCRemoteSwiftPackageReference "FilePicker" */;
 			productName = FilePicker;
+		};
+		38273E832982C993002433F9 /* WallpapperLib */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = WallpapperLib;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
