@@ -63,12 +63,10 @@ A GUI for [Wallpapper](https://github.com/mczachurski/wallpapper), generating dy
 
 本项目使用 Xcode14 开发。
 
-## 已知问题
-
-在为最低系统版本 macOS 11.0 编译的 App 中删除图像可能导致 App 崩溃。为 macOS 12.0 及更高版本编译的 App 无此问题。更多信息请查看发布页面。
-
 ## 贡献者
 
 [土川虎虎虎](https://space.bilibili.com/29125536)，开发者
 
 [Keldos](https://github.com/Keldos-Li)，绘制了本 App 的图标，贡献者
+
+[LiYanan2004](https://github.com/LiYanan2004)，贡献者
