@@ -29,22 +29,30 @@ struct SolarWallpaperView: View {
                         Text("No images yet.")
                             .foregroundColor(.secondary)
                     }
-                    ForEach(numbers, id: \.self) { index in
+                    ForEach(wallpapers.indices, id: \.self) { index in
+                        let wallpaper = Binding<WallpaperImage> {
+                            wallpapers[index]
+                        } set: {
+                            wallpapers[min(index, wallpapers.count - 1)] = $0
+                        }
+                        let wrappedWallpaper = wallpaper.wrappedValue
                         HStack {
-                            Image(nsImage: NSImage(contentsOfFile: wallpapers[index].fileName) ?? NSImage(imageLiteralResourceName: "noimage.jpg"))
+                            Image(nsImage: NSImage(contentsOfFile: wrappedWallpaper.fileName) ?? NSImage(imageLiteralResourceName: "noimage.jpg"))
                                 .resizable()
                                 .scaledToFit()
                                 .frame(width: 150, height: 150)
                                 .padding(.trailing)
                             Form {
-                                Toggle("Is Primary", isOn: self.$wallpapers[index].isPrimary)
-                                Picker("Is For:", selection: self.$wallpapers[index].isFor) {
+                                Toggle("Is Primary", isOn: wallpaper.isPrimary)
+                                Picker("Is For:", selection: wallpaper.isFor) {
                                     Text("Dark").tag(WallpaperAppearance.dark)
                                     Text("Light").tag(WallpaperAppearance.light)
                                     Text("None").tag(WallpaperAppearance.none)
                                 }
-                                TextField("Altitude", value: self.$wallpapers[index].altitude, formatter: NumberFormatter())
-                                TextField("Azimuth", value: self.$wallpapers[index].azimuth, formatter: NumberFormatter())
+                                // Crashes here. (Start)
+                                TextField("Altitude", value: wallpaper.altitude, formatter: NumberFormatter())
+                                TextField("Azimuth", value: wallpaper.azimuth, formatter: NumberFormatter())
+                                // Crashes here. (End)
                                 HStack {
                                     Spacer()
                                     Button {
