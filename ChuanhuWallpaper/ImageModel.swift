@@ -17,7 +17,7 @@ struct WallpaperImage: Hashable, Identifiable, Equatable {
     var fileName: String
     var isPrimary: Bool = false
     var isFor: WallpaperAppearance = .none
-    var altitude: Double = 0.0
-    var azimuth: Double = 0.0
+    var altitude: Double?
+    var azimuth: Double?
     var time: Date = Date()
 }
