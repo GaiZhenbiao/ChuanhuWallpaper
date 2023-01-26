@@ -12,7 +12,7 @@ enum WallpaperAppearance {
     case light, dark, none
 }
 
-struct WallpaperImage: Hashable, Identifiable {
+struct WallpaperImage: Hashable, Identifiable, Equatable {
     let id = UUID()
     var fileName: String
     var isPrimary: Bool = false
