@@ -46,23 +46,6 @@ struct ContentView: View {
             }
             .listStyle(.sidebar)
         }
-//        TabView {
-//            AppearanceWallpaperView()
-//                .tabItem {
-//                    Label("Appearance", systemImage: "star")
-//                }
-//                .tag(Tabs.appearance)
-//            SolarWallpaperView()
-//                .tabItem {
-//                    Label("Solar", systemImage: "gear")
-//                }
-//                .tag(Tabs.solar)
-//            TimeWallpaperView()
-//                .tabItem {
-//                    Label("Time", systemImage: "star")
-//                }
-//                .tag(Tabs.time)
-//        }
     }
 }
 
