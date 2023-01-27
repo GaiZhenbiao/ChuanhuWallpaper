@@ -13,6 +13,7 @@ struct SolarWallpaperView: View {
     @State var wallpapers: [WallpaperImage] = []
     @State var showErrorMessage = false
     @State var errorMessage = ""
+    @State private var dropTarget = false
     let wallpaperGenerator = WallpaperGenerator()
     
     var body: some View {
@@ -23,6 +24,19 @@ struct SolarWallpaperView: View {
                 wallpapersList
             }
         }
+        .overlay(dropPlaceholder)
+        .onDrop(of: [.jpeg, .image, .png], isTargeted: $dropTarget) { providers in
+            for provider in providers {
+                provider.loadInPlaceFileRepresentation(forTypeIdentifier: "public.image") { url, _, _ in
+                    if let url {
+                        if addWallpaper(at: url) == false {
+                            return
+                        }
+                    }
+                }
+            }
+            return true
+        }
         .toolbar(content: toolbar)
         .navigationSubtitle(String(wallpapers.count) + " image(s)")
     }
@@ -31,6 +45,7 @@ struct SolarWallpaperView: View {
         Text("No images yet.")
             .font(.title2.bold())
             .foregroundColor(.secondary)
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
     
     var wallpapersList: some View {
@@ -42,6 +57,15 @@ struct SolarWallpaperView: View {
                 }
             }
             .padding()
+        }
+    }
+    
+    @ViewBuilder
+    var dropPlaceholder: some View {
+        if dropTarget {
+            Rectangle()
+                .stroke(Color.secondary, style: StrokeStyle(lineWidth: 3, lineCap: .round, lineJoin: .round, miterLimit: 0, dash: [10], dashPhase: 0))
+                .padding(5)
         }
     }
 }
