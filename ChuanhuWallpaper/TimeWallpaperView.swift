@@ -125,6 +125,6 @@ extension TimeWallpaperView {
 
 struct TimeWallpaperView_Previews: PreviewProvider {
     static var previews: some View {
-        TimeWallpaperView(wallpapers: [WallpaperImage(fileName: "/Users/treediagram/Downloads/appletv.jpeg")])
+        TimeWallpaperView(wallpapers: [WallpaperImage(fileName: "/Users/treediagram/Downloads/HelloDark_Mac.png")])
     }
 }

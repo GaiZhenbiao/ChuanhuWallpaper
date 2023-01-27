@@ -80,6 +80,8 @@ struct WallPaperView: View {
                     withAnimation {
                         _ = wallpapers.remove(at: index)
                     }
+                    let loc = NSEvent.mouseLocation
+                    NSAnimationEffect.poof.show(centeredAt: NSPoint(x: loc.x, y: loc.y), size: NSSize(width: 40, height: 40))
                 } label: {
                     Text("Trash")
                 }
