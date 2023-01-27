@@ -23,6 +23,7 @@
 		129D35522971603100240248 /* AddPictureButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 129D35512971603100240248 /* AddPictureButton.swift */; };
 		12BF6A5829704133001F0EB4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12BF6A5729704133001F0EB4 /* AppDelegate.swift */; };
 		38273E842982C993002433F9 /* WallpapperLib in Frameworks */ = {isa = PBXBuildFile; productRef = 38273E832982C993002433F9 /* WallpapperLib */; };
+		38273E8629838107002433F9 /* WallPaperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38273E8529838107002433F9 /* WallPaperView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		129D354D29715C2400240248 /* SubmitButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmitButton.swift; sourceTree = "<group>"; };
 		129D35512971603100240248 /* AddPictureButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPictureButton.swift; sourceTree = "<group>"; };
 		12BF6A5729704133001F0EB4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		38273E8529838107002433F9 /* WallPaperView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallPaperView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +109,7 @@
 				1207B47E296EF60200B5D36D /* ContentView.swift */,
 				1207B494296EF74B00B5D36D /* SolarWallpaperView.swift */,
 				1207B496296EF75F00B5D36D /* TimeWallpaperView.swift */,
+				38273E8529838107002433F9 /* WallPaperView.swift */,
 				1207B498296EF77000B5D36D /* AppearanceWallpaperView.swift */,
 			);
 			name = View;
@@ -212,6 +215,7 @@
 			files = (
 				12BF6A5829704133001F0EB4 /* AppDelegate.swift in Sources */,
 				129D354E29715C2400240248 /* SubmitButton.swift in Sources */,
+				38273E8629838107002433F9 /* WallPaperView.swift in Sources */,
 				1207B499296EF77000B5D36D /* AppearanceWallpaperView.swift in Sources */,
 				1207B49B296F09F000B5D36D /* ImageModel.swift in Sources */,
 				129D35522971603100240248 /* AddPictureButton.swift in Sources */,

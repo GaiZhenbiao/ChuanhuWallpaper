@@ -66,9 +66,7 @@ struct AppearanceWallpaperView: View {
             .padding(.bottom)
         }
         .toolbar {
-            ToolbarItemGroup {
-                SubmitButton(wallpapers: wallpapers, disableSubmit: currentSelectedNum < 2)
-            }
+            SubmitButton(wallpapers: wallpapers).disabled(currentSelectedNum < 2)
         }
     }
 }

@@ -13,7 +13,6 @@ struct SubmitButton: View {
     @State var showErrorMessage = false
     @State var errorMessage = ""
     let wallpaperGenerator = WallpaperGenerator()
-    var disableSubmit = false
     
     var body: some View {
         Button {
@@ -42,7 +41,6 @@ struct SubmitButton: View {
         .alert(isPresented: $showErrorMessage) {
             Alert(title: Text("An Error Occured"), message: Text(errorMessage), dismissButton: .cancel())
         }
-        .disabled(disableSubmit)
     }
 }
 
