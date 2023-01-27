@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct WallPaperView: View {
+    // Store the image inside a State to animate the image.
+    // To learn more about SwiftUI refresh pattern, watch `Demystify SwiftUI` from WWDC 2021.
+    @State private var image: Image = Image(nsImage: NSImage(imageLiteralResourceName: "noimage.jpeg"))
     @Binding var wallpapers: [WallpaperImage]
     @Binding var wallpaper: WallpaperImage
     var index: Int {
@@ -22,7 +25,7 @@ struct WallPaperView: View {
     
     var body: some View {
         HStack {
-            Image(nsImage: NSImage(contentsOfFile: wallpaper.fileName) ?? NSImage(imageLiteralResourceName: "noimage.jpg"))
+            image
                 .resizable()
                 .scaledToFit()
                 .frame(width: 150, height: 150)
@@ -45,6 +48,11 @@ struct WallPaperView: View {
             }
             .frame(maxWidth: 300)
         }
+        .onAppear {
+            if let nsImage = NSImage(contentsOfFile: wallpaper.fileName) {
+                image = Image(nsImage: nsImage)
+            }
+        }
     }
     
     @ViewBuilder
@@ -53,19 +61,25 @@ struct WallPaperView: View {
             HStack {
                 Spacer()
                 Button {
-                    wallpapers.swapAt(index, index-1)
+                    withAnimation {
+                        wallpapers.swapAt(index, index - 1)
+                    }
                 } label: {
                     Text("Move Up")
                 }
                 .disabled(index == 0)
                 Button {
-                    wallpapers.swapAt(index, index+1)
+                    withAnimation {
+                        wallpapers.swapAt(index, index + 1)
+                    }
                 } label: {
                     Text("Move Down")
                 }
-                .disabled(index == wallpapers.count-1)
+                .disabled(index == wallpapers.count - 1)
                 Button {
-                    wallpapers.remove(at: index)
+                    withAnimation {
+                        _ = wallpapers.remove(at: index)
+                    }
                 } label: {
                     Text("Trash")
                 }
