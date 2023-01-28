@@ -7,6 +7,7 @@
 
 import Foundation
 import WallpapperLib
+import SwiftUI
 
 enum WallpaperAppearance {
     case light, dark, none
@@ -14,10 +15,22 @@ enum WallpaperAppearance {
 
 struct WallpaperImage: Hashable, Identifiable, Equatable {
     let id = UUID()
-    var fileName: String
+    var fileName: String { filePath.lastPathComponent }
+    var filePath: URL
     var isPrimary: Bool = false
     var isFor: WallpaperAppearance = .none
-    var altitude: Double?
-    var azimuth: Double?
+    var altitude: Double? = .zero
+    var azimuth: Double? = .zero
     var time: Date = Date()
+    
+    static var noImage: WallpaperImage = WallpaperImage(filePath: URL(string: "/Users/liyanan2004/Desktop/example.png")!)
+    
+    var image: AnyView {
+        if let nsImage = NSImage(contentsOfFile: filePath.path) {
+            return AnyView(Image(nsImage: nsImage).resizable())
+        } else {
+            return AnyView(BlankWallpaper())
+        }
+    }
 }
+

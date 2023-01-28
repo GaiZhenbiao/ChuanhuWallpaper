@@ -19,11 +19,16 @@
 		1207B4A0296FC77700B5D36D /* noimage.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1207B49F296FC77700B5D36D /* noimage.jpg */; };
 		1207B4A4296FEB3400B5D36D /* UsefulFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1207B4A3296FEB3400B5D36D /* UsefulFunctions.swift */; };
 		1207B4A92970055000B5D36D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1207B4AB2970055000B5D36D /* Localizable.strings */; };
-		129D354E29715C2400240248 /* SubmitButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 129D354D29715C2400240248 /* SubmitButton.swift */; };
-		129D35522971603100240248 /* AddPictureButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 129D35512971603100240248 /* AddPictureButton.swift */; };
+		129D354E29715C2400240248 /* SaveButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 129D354D29715C2400240248 /* SaveButton.swift */; };
 		12BF6A5829704133001F0EB4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12BF6A5729704133001F0EB4 /* AppDelegate.swift */; };
-		38273E842982C993002433F9 /* WallpapperLib in Frameworks */ = {isa = PBXBuildFile; productRef = 38273E832982C993002433F9 /* WallpapperLib */; };
-		38273E8629838107002433F9 /* WallPaperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38273E8529838107002433F9 /* WallPaperView.swift */; };
+		38273E842982C993002433F9 /* WallpapperLib in Frameworks */ = {isa = PBXBuildFile; productRef = 38273E832982C993002433F9 /* WallpapperLib */; settings = {ATTRIBUTES = (Required, ); }; };
+		387DEB162984CCAD0053BABD /* DynamicWallpaperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387DEB152984CCAD0053BABD /* DynamicWallpaperView.swift */; };
+		38E0F9142984EC0F00E0A309 /* BlankWallpaper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E0F9132984EC0E00E0A309 /* BlankWallpaper.swift */; };
+		38E0F9162984F79D00E0A309 /* WallpaperPlaceholderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E0F9152984F79D00E0A309 /* WallpaperPlaceholderCell.swift */; };
+		38E0F91829850BDC00E0A309 /* StandardButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E0F91729850BDC00E0A309 /* StandardButtonStyle.swift */; };
+		38E0F91A29851C4800E0A309 /* WallpaperPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E0F91929851C4800E0A309 /* WallpaperPicker.swift */; };
+		38E0F91C2985269800E0A309 /* WallpaperCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E0F91B2985269800E0A309 /* WallpaperCell.swift */; };
+		38E0F91E2985443B00E0A309 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E0F91D2985443B00E0A309 /* Color.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,10 +47,15 @@
 		1207B4AA2970055000B5D36D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		1207B4AC2970077500B5D36D /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		127BF6B12970430100FB20B7 /* wallpapper */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = wallpapper; sourceTree = "<group>"; };
-		129D354D29715C2400240248 /* SubmitButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmitButton.swift; sourceTree = "<group>"; };
-		129D35512971603100240248 /* AddPictureButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPictureButton.swift; sourceTree = "<group>"; };
+		129D354D29715C2400240248 /* SaveButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveButton.swift; sourceTree = "<group>"; };
 		12BF6A5729704133001F0EB4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		38273E8529838107002433F9 /* WallPaperView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallPaperView.swift; sourceTree = "<group>"; };
+		387DEB152984CCAD0053BABD /* DynamicWallpaperView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicWallpaperView.swift; sourceTree = "<group>"; };
+		38E0F9132984EC0E00E0A309 /* BlankWallpaper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BlankWallpaper.swift; path = ../BlankWallpaper.swift; sourceTree = "<group>"; };
+		38E0F9152984F79D00E0A309 /* WallpaperPlaceholderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WallpaperPlaceholderCell.swift; path = ../WallpaperPlaceholderCell.swift; sourceTree = "<group>"; };
+		38E0F91729850BDC00E0A309 /* StandardButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandardButtonStyle.swift; sourceTree = "<group>"; };
+		38E0F91929851C4800E0A309 /* WallpaperPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallpaperPicker.swift; sourceTree = "<group>"; };
+		38E0F91B2985269800E0A309 /* WallpaperCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallpaperCell.swift; sourceTree = "<group>"; };
+		38E0F91D2985443B00E0A309 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,12 +93,16 @@
 			children = (
 				1207B47C296EF60200B5D36D /* ChuanhuWallpaperApp.swift */,
 				12BF6A5729704133001F0EB4 /* AppDelegate.swift */,
+				1207B47E296EF60200B5D36D /* ContentView.swift */,
+				38E0F91F29856A4B00E0A309 /* Utilities */,
 				121399DB2972560E00780368 /* View */,
 				121399DC2972563100780368 /* Components */,
+				38E0F92129856A8E00E0A309 /* Model */,
 				1207B4AB2970055000B5D36D /* Localizable.strings */,
 				1207B482296EF60300B5D36D /* Preview Content */,
 				1207B49F296FC77700B5D36D /* noimage.jpg */,
 				1207B480296EF60300B5D36D /* Assets.xcassets */,
+				38E0F92029856A6200E0A309 /* oldViews */,
 				1207B485296EF60300B5D36D /* ChuanhuWallpaper.entitlements */,
 				127BF6B12970430100FB20B7 /* wallpapper */,
 			);
@@ -106,11 +120,9 @@
 		121399DB2972560E00780368 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				1207B47E296EF60200B5D36D /* ContentView.swift */,
-				1207B494296EF74B00B5D36D /* SolarWallpaperView.swift */,
-				1207B496296EF75F00B5D36D /* TimeWallpaperView.swift */,
-				38273E8529838107002433F9 /* WallPaperView.swift */,
-				1207B498296EF77000B5D36D /* AppearanceWallpaperView.swift */,
+				387DEB152984CCAD0053BABD /* DynamicWallpaperView.swift */,
+				38E0F9132984EC0E00E0A309 /* BlankWallpaper.swift */,
+				38E0F9152984F79D00E0A309 /* WallpaperPlaceholderCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -118,10 +130,9 @@
 		121399DC2972563100780368 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				129D354D29715C2400240248 /* SubmitButton.swift */,
-				129D35512971603100240248 /* AddPictureButton.swift */,
-				1207B49A296F09F000B5D36D /* ImageModel.swift */,
-				1207B4A3296FEB3400B5D36D /* UsefulFunctions.swift */,
+				38E0F91B2985269800E0A309 /* WallpaperCell.swift */,
+				38E0F91929851C4800E0A309 /* WallpaperPicker.swift */,
+				129D354D29715C2400240248 /* SaveButton.swift */,
 			);
 			name = Components;
 			sourceTree = "<group>";
@@ -131,6 +142,34 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		38E0F91F29856A4B00E0A309 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				38E0F91D2985443B00E0A309 /* Color.swift */,
+				38E0F91729850BDC00E0A309 /* StandardButtonStyle.swift */,
+				1207B4A3296FEB3400B5D36D /* UsefulFunctions.swift */,
+			);
+			name = Utilities;
+			sourceTree = "<group>";
+		};
+		38E0F92029856A6200E0A309 /* oldViews */ = {
+			isa = PBXGroup;
+			children = (
+				1207B494296EF74B00B5D36D /* SolarWallpaperView.swift */,
+				1207B496296EF75F00B5D36D /* TimeWallpaperView.swift */,
+				1207B498296EF77000B5D36D /* AppearanceWallpaperView.swift */,
+			);
+			path = oldViews;
+			sourceTree = "<group>";
+		};
+		38E0F92129856A8E00E0A309 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1207B49A296F09F000B5D36D /* ImageModel.swift */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -213,17 +252,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				38E0F9142984EC0F00E0A309 /* BlankWallpaper.swift in Sources */,
 				12BF6A5829704133001F0EB4 /* AppDelegate.swift in Sources */,
-				129D354E29715C2400240248 /* SubmitButton.swift in Sources */,
-				38273E8629838107002433F9 /* WallPaperView.swift in Sources */,
+				129D354E29715C2400240248 /* SaveButton.swift in Sources */,
+				38E0F91829850BDC00E0A309 /* StandardButtonStyle.swift in Sources */,
 				1207B499296EF77000B5D36D /* AppearanceWallpaperView.swift in Sources */,
+				38E0F91C2985269800E0A309 /* WallpaperCell.swift in Sources */,
 				1207B49B296F09F000B5D36D /* ImageModel.swift in Sources */,
-				129D35522971603100240248 /* AddPictureButton.swift in Sources */,
+				387DEB162984CCAD0053BABD /* DynamicWallpaperView.swift in Sources */,
 				1207B497296EF75F00B5D36D /* TimeWallpaperView.swift in Sources */,
 				1207B47F296EF60200B5D36D /* ContentView.swift in Sources */,
+				38E0F91A29851C4800E0A309 /* WallpaperPicker.swift in Sources */,
 				1207B4A4296FEB3400B5D36D /* UsefulFunctions.swift in Sources */,
 				1207B47D296EF60200B5D36D /* ChuanhuWallpaperApp.swift in Sources */,
 				1207B495296EF74B00B5D36D /* SolarWallpaperView.swift in Sources */,
+				38E0F9162984F79D00E0A309 /* WallpaperPlaceholderCell.swift in Sources */,
+				38E0F91E2985443B00E0A309 /* Color.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -363,12 +407,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = ChuanhuWallpaper/ChuanhuWallpaper.entitlements;
-				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 12;
 				DEVELOPMENT_ASSET_PATHS = "\"ChuanhuWallpaper/Preview Content\"";
-				DEVELOPMENT_TEAM = KWS26AWJ45;
+				DEVELOPMENT_TEAM = CJ9X49H2WL;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -393,12 +437,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = ChuanhuWallpaper/ChuanhuWallpaper.entitlements;
-				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 12;
 				DEVELOPMENT_ASSET_PATHS = "\"ChuanhuWallpaper/Preview Content\"";
-				DEVELOPMENT_TEAM = KWS26AWJ45;
+				DEVELOPMENT_TEAM = CJ9X49H2WL;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;

@@ -10,8 +10,8 @@ import FilePicker
 import WallpapperLib
 
 struct AppearanceWallpaperView: View {
-    @State private var lightWallpaper = WallpaperImage(fileName: "noimage.jpg", isFor: .light)
-    @State private var darkWallpaper = WallpaperImage(fileName: "noimage.jpg", isFor: .dark)
+    @State private var lightWallpaper = WallpaperImage.noImage
+    @State private var darkWallpaper = WallpaperImage.noImage
     @State var pictureInfos: [PictureInfo] = []
     @State var showErrorMessage = false
     @State var errorMessage = ""
@@ -25,7 +25,7 @@ struct AppearanceWallpaperView: View {
         }
         .toolbar {
             let wallpapers = [lightWallpaper, darkWallpaper]
-            SubmitButton(wallpapers: wallpapers).disabled(currentSelectedNum < 2)
+//            SaveButton(wallpapers: wallpapers).disabled(currentSelectedNum < 2)
         }
     }
     
@@ -40,8 +40,7 @@ struct AppearanceWallpaperView: View {
                     .font(.headline)
                 Toggle("Is Primary", isOn: self.$lightWallpaper.isPrimary)
                 FilePicker(types: [.image], allowMultiple: false) { urls in
-                    let filepath = urls[0].path
-                    lightWallpaper.fileName = filepath.removingPercentEncoding!
+                    lightWallpaper.filePath = urls[0]
                     currentSelectedNum += 1
                 } label: {
                     Label("Change Picture", systemImage: "doc.badge.plus")
@@ -51,7 +50,7 @@ struct AppearanceWallpaperView: View {
         .onDrop(of: [.image, .jpeg, .png], isTargeted: .constant(false)) { providers in
             providers[0].loadInPlaceFileRepresentation(forTypeIdentifier: "public.image") { url, _, _ in
                 if let url {
-                    lightWallpaper.fileName = url.path
+                    lightWallpaper.filePath = url
                     currentSelectedNum += 1
                 }
             }
@@ -70,8 +69,7 @@ struct AppearanceWallpaperView: View {
                     .font(.headline)
                 Toggle("Is Primary", isOn: self.$darkWallpaper.isPrimary)
                 FilePicker(types: [.image], allowMultiple: false) { urls in
-                    let filepath = urls[0].path
-                    darkWallpaper.fileName = filepath
+                    darkWallpaper.filePath = urls[0]
                     currentSelectedNum += 1
                 } label: {
                     Label("Change Picture", systemImage: "doc.badge.plus")
@@ -81,7 +79,7 @@ struct AppearanceWallpaperView: View {
         .onDrop(of: [.image, .jpeg, .png], isTargeted: .constant(false)) { providers in
             providers[0].loadInPlaceFileRepresentation(forTypeIdentifier: "public.image") { url, _, _ in
                 if let url {
-                    darkWallpaper.fileName = url.path
+                    darkWallpaper.filePath = url
                     currentSelectedNum += 1
                 }
             }

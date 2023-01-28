@@ -15,36 +15,70 @@ struct windowSize {
 }
 
 struct ContentView: View {
-    
-    private enum Tabs: Hashable {
-        case solar, time, appearance
-    }
-    
-    @State private var selectedTab: Tabs? = Tabs.appearance
+    @State private var wallpapers = [WallpaperImage]()
+    @State private var selectedWallpaper: WallpaperImage?
+    @State private var bottomBarHeight = CGFloat.zero
+    @State private var type = WallPaperType.solar
+    @Namespace private var paper
     
     var body: some View {
-        NavigationView {
-            List {
-                NavigationLink(tag: Tabs.appearance, selection: $selectedTab) {
-                    AppearanceWallpaperView()
-                        .navigationTitle("Appearance")
-                } label: {
-                    Label("Appearance", systemImage: "moon.circle")
-                }
-                NavigationLink(tag: Tabs.solar, selection: $selectedTab) {
-                    SolarWallpaperView()
-                        .navigationTitle("Solar")
-                } label: {
-                    Label("Solar", systemImage: "sun.haze")
-                }
-                NavigationLink(tag: Tabs.time, selection: $selectedTab) {
-                    TimeWallpaperView()
-                        .navigationTitle("Time")
-                } label: {
-                    Label("Time", systemImage: "clock")
-                }
+        ZStack {
+            ZStack(alignment: .bottom) {
+                DynamicWallpaperView(wallpapers: $wallpapers, selectedWallpaper: $selectedWallpaper, namespace: paper, type: $type)
+                    .background(Color.backgroud)
+                    .padding(.bottom, bottomBarHeight)
+                
+                SaveButton(wallpapers: wallpapers)
+                    .frame(maxWidth: .infinity)
+                    .overlay(
+                        Button {
+                            withAnimation(.spring()) {
+                                wallpapers.removeAll()
+                            }
+                        } label: {
+                            Image(systemName: "xmark")
+                        }
+                            .offset(x: wallpapers.isEmpty ? 100 : 0)
+                            .animation(.spring(), value: wallpapers)
+                        , alignment: .trailing
+                    )
+                    .overlay(
+                        Group {
+                            switch type {
+                            case .time:
+                                Button("Switch to Solar Mode") {
+                                    type = .solar
+                                }
+                            case .solar:
+                                Button("Switch to Time Mode") {
+                                    type = .time
+                                }
+                                .multilineTextAlignment(.leading)
+                            }
+                        }
+                            .buttonStyle(.link)
+                        , alignment: .leading
+                    )
+                    .padding()
+                    .buttonStyle(.standard)
+                    .background(
+                        Color.backgroud
+                            .shadow(color: Color.black.opacity(0.05), radius: 5, y: -1)
+                    )
+                    .overlay(bottombarReader)
             }
-            .listStyle(.sidebar)
+        }
+    }
+    
+    private var bottombarReader: some View {
+        GeometryReader { proxy in
+            Color.clear
+                .onAppear {
+                    bottomBarHeight = proxy.size.height
+                }
+                .onChange(of: proxy.size.height) {
+                    bottomBarHeight = $0
+                }
         }
     }
 }
