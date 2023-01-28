@@ -29,7 +29,8 @@ struct ContentView: View {
                     AppearanceWallpaperView()
                         .navigationTitle("Appearance")
                 } label: {
-                    Label("Appearance", systemImage: "moon.circle")
+//                    Label("Appearance", systemImage: "moon.circle")
+                    Label("Appearance", image: "AppearanceIcon")
                 }
                 NavigationLink(tag: Tabs.solar, selection: $selectedTab) {
                     SolarWallpaperView()
