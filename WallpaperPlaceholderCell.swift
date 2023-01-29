@@ -10,8 +10,8 @@ import FilePicker
 
 struct WallpaperPlaceholderCell: View {
     var compact: Bool
+    @Binding var isDropTarget: Bool
     var addWallpaper: (URL) -> Void
-    @State private var isDropTarget = false
     
     var body: some View {
         ZStack {
@@ -53,16 +53,6 @@ struct WallpaperPlaceholderCell: View {
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .padding()
         .foregroundColor(.secondary)
-        .onDrop(of: [.jpeg, .image, .png], isTargeted: $isDropTarget) { providers in
-            for provider in providers {
-                provider.loadInPlaceFileRepresentation(forTypeIdentifier: "public.image") { url, _, _ in
-                    if let url {
-                        addWallpaper(url)
-                    }
-                }
-            }
-            return true
-        }
     }
     
     private var fileImportButton: some View {
@@ -78,7 +68,7 @@ struct WallpaperPlaceholderCell: View {
 
 struct WallpaperPlaceholderView_Previews: PreviewProvider {
     static var previews: some View {
-        WallpaperPlaceholderCell(compact: false) { urls in
+        WallpaperPlaceholderCell(compact: false, isDropTarget: .constant(false)) { urls in
             print(urls)
         }
     }

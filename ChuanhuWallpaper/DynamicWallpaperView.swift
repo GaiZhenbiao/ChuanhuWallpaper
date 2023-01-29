@@ -12,34 +12,37 @@ import FilePicker
 struct DynamicWallpaperView: View {
     @Binding var wallpapers: [WallpaperImage]
     @Binding var selectedWallpaper: WallpaperImage?
+    @State private var isDropTarget = false
     var namespace: Namespace.ID
     @Binding var type: WallPaperType
     
     var body: some View {
-        if wallpapers.isEmpty {
-            placeholder(compact: false)
-        } else {
-            ScrollView {
-                VStack {
-                    LazyVGrid(
-                        columns: [GridItem(.adaptive(minimum: 200), spacing: 20)],
-                        spacing: 20
-                    ) {
-                        ForEach($wallpapers) { wallpaper in
-                            WallpaperCell(
-                                wallpaper: wallpaper,
-                                type: type
-                            )
-                            .contextMenu { contextButtons(wallpaper: wallpaper) }
+        Group {
+            if wallpapers.isEmpty {
+                placeholder(compact: false)
+            } else {
+                ScrollView {
+                    VStack {
+                        LazyVGrid(
+                            columns: [GridItem(.adaptive(minimum: 200), spacing: 20)],
+                            spacing: 20
+                        ) {
+                            ForEach($wallpapers) { wallpaper in
+                                WallpaperCell(wallpaper: wallpaper, type: type)
+                                .contextMenu { contextButtons(wallpaper: wallpaper) }
+                            }
                         }
+                        
+                        placeholder(compact: true)
+                            .frame(maxHeight: .infinity)
                     }
                     .padding()
-                    
-                    placeholder(compact: true)
-                        .frame(maxHeight: .infinity)
                 }
-                .padding(.vertical)
             }
+        }
+        .onDrop(of: [.jpeg, .image, .png], isTargeted: $isDropTarget) { providers in
+            importFromProviders(providers)
+            return true
         }
     }
     
@@ -85,55 +88,8 @@ struct DynamicWallpaperView: View {
         }
     }
     
-    var pickers: some View {
-        HStack {
-            let thumbnailWallpaper = Binding<WallpaperImage?> {
-                wallpapers.first(where: { $0.isPrimary })
-            } set: { newWallpaper in
-                if let index = wallpapers.firstIndex(where: { $0.isPrimary }) {
-                    wallpapers[index].isPrimary = false
-                }
-                if let newIndex = wallpapers.firstIndex(where: { $0.id == newWallpaper?.id }) {
-                    wallpapers[newIndex].isPrimary = true
-                }
-            }
-            WallpaperPicker(wallpapers: wallpapers, selection: thumbnailWallpaper) {
-                Text("Thumbnail")
-            }
-            
-            let lightModeWallpaper = Binding<WallpaperImage?> {
-                wallpapers.first(where: { $0.isFor == .light })
-            } set: { newWallpaper in
-                if let index = wallpapers.firstIndex(where: { $0.isFor == .light }) {
-                    wallpapers[index].isFor = .none
-                }
-                if let newIndex = wallpapers.firstIndex(where: { $0.id == newWallpaper?.id }) {
-                    wallpapers[newIndex].isFor = .light
-                }
-            }
-            WallpaperPicker(wallpapers: wallpapers, selection: lightModeWallpaper) {
-                Text("Light Mode")
-            }
-
-            let darkModeWallpaper = Binding<WallpaperImage?> {
-                wallpapers.first(where: { $0.isFor == .dark })
-            } set: { newWallpaper in
-                if let index = wallpapers.firstIndex(where: { $0.isFor == .dark }) {
-                    wallpapers[index].isFor = .none
-                }
-                if let newIndex = wallpapers.firstIndex(where: { $0.id == newWallpaper?.id }) {
-                    wallpapers[newIndex].isFor = .dark
-                }
-            }
-            WallpaperPicker(wallpapers: wallpapers, selection: darkModeWallpaper) {
-                Text("Dark Mode")
-            }
-        }
-        .padding(.horizontal)
-    }
-
     func placeholder(compact: Bool) -> some View {
-        WallpaperPlaceholderCell(compact: compact, addWallpaper: addWallpaper(at:))
+        WallpaperPlaceholderCell(compact: compact, isDropTarget: $isDropTarget, addWallpaper: addWallpaper(at:))
     }
     
     private func importFromProviders(_ providers: [NSItemProvider]) {
