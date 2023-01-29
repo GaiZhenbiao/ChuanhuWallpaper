@@ -22,8 +22,11 @@ struct WallpaperImage: Hashable, Identifiable, Equatable {
     var altitude: Double? = .zero
     var azimuth: Double? = .zero
     var time: Date = Date()
+    var isValid = true
     
-    static var noImage: WallpaperImage = WallpaperImage(filePath: URL(string: "/Users/liyanan2004/Desktop/example.png")!)
+    static func placeholder() -> WallpaperImage {
+        WallpaperImage(filePath: URL(string: "/Users/liyanan2004/Desktop/example.png")!, isValid: false)
+    }
     
     var image: AnyView {
         if let nsImage = NSImage(contentsOfFile: filePath.path) {

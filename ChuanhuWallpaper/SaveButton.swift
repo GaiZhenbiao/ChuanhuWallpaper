@@ -36,6 +36,7 @@ struct SaveButton: View {
             Label("Save...", systemImage: "square.and.arrow.down")
         }
         .buttonStyle(.standard)
+        .disabled(wallpapers.count < 2)
         .alert(isPresented: $showErrorMessage) {
             Alert(title: Text("An Error Occured"), message: Text(errorMessage), dismissButton: .cancel())
         }

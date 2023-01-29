@@ -11,10 +11,10 @@ import FilePicker
 
 struct DynamicWallpaperView: View {
     @Binding var wallpapers: [WallpaperImage]
-    @Binding var selectedWallpaper: WallpaperImage?
+    @State private var draggingWallpaper: WallpaperImage?
     @State private var isDropTarget = false
     var namespace: Namespace.ID
-    @Binding var type: WallPaperType
+    @Binding var mode: WallpaperMode
     
     var body: some View {
         Group {
@@ -27,9 +27,21 @@ struct DynamicWallpaperView: View {
                             columns: [GridItem(.adaptive(minimum: 200), spacing: 20)],
                             spacing: 20
                         ) {
-                            ForEach($wallpapers) { wallpaper in
-                                WallpaperCell(wallpaper: wallpaper, type: type)
-                                .contextMenu { contextButtons(wallpaper: wallpaper) }
+                            ForEach(wallpapers) { wallpaper in
+                                let wallpaper = Binding<WallpaperImage> {
+                                    wallpaper
+                                } set: { wallpaper in
+                                    if let index = wallpapers.firstIndex(where: { $0.id == wallpaper.id }) {
+                                        wallpapers[index] = wallpaper
+                                    }
+                                }
+                                WallpaperCell(wallpaper: wallpaper, mode: mode, namespace: namespace) {
+                                    contextButtons(wallpaper: wallpaper)
+                                }
+                                .onDrag({
+                                    draggingWallpaper = wallpaper.wrappedValue
+                                    return NSItemProvider(item: Data() as NSSecureCoding, typeIdentifier: "public.image")
+                                })
                             }
                         }
                         
@@ -48,54 +60,73 @@ struct DynamicWallpaperView: View {
     
     @ViewBuilder
     func contextButtons(wallpaper: Binding<WallpaperImage>) -> some View {
-        if !wallpaper.wrappedValue.isPrimary {
-            Button("Is Primary") {
+        let isPrimary = Binding<Bool> {
+            wallpaper.wrappedValue.isPrimary
+        } set: { isPrimary in
+            if isPrimary {
                 if let index = wallpapers.firstIndex(where: { $0.isPrimary }) {
                     wallpapers[index].isPrimary = false
                 }
-                wallpaper.wrappedValue.isPrimary = true
             }
+            wallpaper.wrappedValue.isPrimary = isPrimary
+        }
+        Toggle(isOn: isPrimary) {
+            Label("Is Primary", systemImage: "photo")
         }
         
         Divider()
         
-        Button("For Light Mode") {
-            if let index = wallpapers.firstIndex(where: { $0.isFor == .light }) {
+        let isFor = Binding<WallpaperAppearance> {
+            wallpaper.wrappedValue.isFor
+        } set: { appearance in
+            if let index = wallpapers.firstIndex(where: { $0.isFor == appearance }) {
                 wallpapers[index].isFor = .none
             }
-            wallpaper.wrappedValue.isFor = .light
+            wallpaper.wrappedValue.isFor = appearance
         }
-        .disabled(wallpaper.wrappedValue.isFor == .light)
-        
-        Button("For Dark Mode") {
-            if let index = wallpapers.firstIndex(where: { $0.isFor == .dark }) {
-                wallpapers[index].isFor = .none
+        Picker("Is For", selection: isFor) {
+            Label {
+                Text("Auto")
+            } icon: {
+                Image("appearance")
+                    .renderingMode(.template)
+                    .foregroundColor(.primary)
             }
-            wallpaper.wrappedValue.isFor = .dark
+            .tag(WallpaperAppearance.none)
+            Label("Light", systemImage: "sun.max").tag(WallpaperAppearance.light)
+            Label("Dark", systemImage: "moon").tag(WallpaperAppearance.dark)
         }
-        .disabled(wallpaper.wrappedValue.isFor == .dark)
+        .pickerStyle(.radioGroup)
         
         Divider()
         
         Button {
-            withAnimation {
-                if let index = wallpapers.firstIndex(of: wallpaper.wrappedValue) {
-                    wallpapers.remove(at: index)
-                }
-            }
+            remove(wallpaper: wallpaper.wrappedValue)
         } label: {
             Label("Delete", systemImage: "trash")
+                .foregroundColor(.red)
         }
     }
     
-    func placeholder(compact: Bool) -> some View {
-        WallpaperPlaceholderCell(compact: compact, isDropTarget: $isDropTarget, addWallpaper: addWallpaper(at:))
+    private func placeholder(compact: Bool) -> some View {
+        WallpaperPlaceholderCell(compact: compact, isDropTarget: isDropTarget, addWallpaper: addWallpaper(at:))
+            .padding()
+    }
+    
+    private func remove(wallpaper: WallpaperImage) {
+        withAnimation {
+            if let index = wallpapers.firstIndex(of: wallpaper) {
+                wallpapers.remove(at: index)
+            }
+        }
     }
     
     private func importFromProviders(_ providers: [NSItemProvider]) {
         for provider in providers {
             provider.loadInPlaceFileRepresentation(forTypeIdentifier: "public.image") { url, _, _ in
                 if let url {
+                    guard !url.lastPathComponent.hasSuffix(".tmp") else { return }
+                    guard !wallpapers.contains(where: { $0.filePath == url }) else { return }
                     addWallpaper(at: url)
                 }
             }
@@ -121,7 +152,7 @@ struct DynamicWallpaperView: View {
 
 struct DynamicWallpaperView_Previews: PreviewProvider {
     static var previews: some View {
-        DynamicWallpaperView(wallpapers: .constant([.noImage]), selectedWallpaper: .constant(nil),  namespace: Namespace().wrappedValue, type: .constant(.solar))
+        DynamicWallpaperView(wallpapers: .constant([.placeholder()]), namespace: Namespace().wrappedValue, mode: .constant(.solar))
     }
 }
 
@@ -131,7 +162,8 @@ extension View {
     }
 }
 
-enum WallPaperType {
+enum WallpaperMode {
     case time
     case solar
+    case appearance
 }

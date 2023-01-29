@@ -7,10 +7,14 @@
 
 import SwiftUI
 
-struct WallpaperCell: View {
+struct WallpaperCell<Actions: View>: View {
     @Binding var wallpaper: WallpaperImage
-    var type: WallPaperType
+    var mode: WallpaperMode
+    var namespace: Namespace.ID
     @State private var showEditPopover = false
+    @State private var isHovering = false
+    @State private var text = ""
+    @ViewBuilder var actionButtons: () -> Actions
     
     private var formatter: NumberFormatter {
         let formatter = NumberFormatter()
@@ -22,29 +26,33 @@ struct WallpaperCell: View {
     var body: some View {
         VStack(spacing: 12) {
             wallpaper.image
+                .matchedGeometryEffect(id: wallpaper.id, in: namespace)
                 .aspectRatio(contentMode: .fill)
                 .frame(width: 150, height: 150)
-                .cornerRadius(10)
+                .mask(
+                    RoundedRectangle(cornerRadius: 10)
+                        .matchedGeometryEffect(id: "\(wallpaper.id) mask", in: namespace)
+                )
             Text(wallpaper.fileName)
                 .font(.title3)
-            
+
             VStack(spacing: 10) {
                 VStack(alignment: .leading) {
-                    if type == .time {
+                    if mode == .time {
                         Text(wallpaper.time, style: .time)
                     } else {
                         if let azimuth = wallpaper.azimuth,
                            azimuth.isNormal {
                             Text("Azimuth: \(String(format: "%.2f", azimuth))")
                         }
-                        
+
                         if let altitude = wallpaper.altitude,
                            altitude.isNormal {
                             Text("Altitude: \(String(format: "%.2f", altitude))")
                         }
                     }
                 }
-                HStack(spacing: 20) {
+                HStack(spacing: 10) {
                     if wallpaper.isFor == .light {
                         Image(systemName: "sun.max")
                     } else if wallpaper.isFor == .dark {
@@ -54,9 +62,11 @@ struct WallpaperCell: View {
                         Image(systemName: "photo")
                     }
                 }
+                .padding(.bottom, 8)
             }
             .foregroundColor(.secondary)
         }
+        .matchedGeometryEffect(id: "\(wallpaper.id) container", in: namespace)
         .frame(maxWidth: 200, maxHeight: .infinity)
         .padding()
         .background(
@@ -67,19 +77,29 @@ struct WallpaperCell: View {
                         .stroke(Color.secondary.opacity(0.2))
                 )
         )
-        .clipShape(RoundedRectangle(cornerRadius: 10))
-        .onTapGesture {
-            showEditPopover = true
-        }
+        .overlay(
+            Group {
+                if isHovering || showEditPopover {
+                    Image(systemName: "chevron.down")
+                        .foregroundColor(.secondary)
+                        .padding(.bottom, 8)
+                }
+            }
+            , alignment: .bottom
+        )
+        .cornerRadius(10)
+        .onHover { isHovering = $0 }
+        .onTapGesture { showEditPopover = true }
         .popover(isPresented: $showEditPopover, arrowEdge: .bottom) {
             Form {
-                switch type {
-                case .solar:
+                if mode == .solar {
                     TextField("Altitude", value: $wallpaper.altitude, formatter: formatter)
                     TextField("Azimuth", value: $wallpaper.azimuth, formatter: formatter)
-                case .time:
+                } else if mode == .time {
                     DatePicker("Time", selection: $wallpaper.time)
                 }
+                Divider()
+                actionButtons()
             }
             .frame(width: 200)
             .padding()
@@ -89,6 +109,10 @@ struct WallpaperCell: View {
 
 struct WallpaperCell_Previews: PreviewProvider {
     static var previews: some View {
-        WallpaperCell(wallpaper: .constant(.noImage), type: .solar)
+        WallpaperCell(wallpaper: .constant(.placeholder()), mode: .solar, namespace: Namespace().wrappedValue) {
+            Button("Delete") {
+                
+            }
+        }
     }
 }

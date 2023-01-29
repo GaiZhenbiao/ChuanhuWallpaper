@@ -10,7 +10,8 @@ import FilePicker
 
 struct WallpaperPlaceholderCell: View {
     var compact: Bool
-    @Binding var isDropTarget: Bool
+    var allowMultiple: Bool = true
+    var isDropTarget: Bool = false
     var addWallpaper: (URL) -> Void
     
     var body: some View {
@@ -51,12 +52,11 @@ struct WallpaperPlaceholderCell: View {
             }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .padding()
         .foregroundColor(.secondary)
     }
     
     private var fileImportButton: some View {
-        FilePicker(types: [.image], allowMultiple: true) { urls in
+        FilePicker(types: [.image], allowMultiple: allowMultiple) { urls in
             for url in urls {
                 addWallpaper(url)
             }
@@ -68,7 +68,7 @@ struct WallpaperPlaceholderCell: View {
 
 struct WallpaperPlaceholderView_Previews: PreviewProvider {
     static var previews: some View {
-        WallpaperPlaceholderCell(compact: false, isDropTarget: .constant(false)) { urls in
+        WallpaperPlaceholderCell(compact: false) { urls in
             print(urls)
         }
     }

@@ -29,6 +29,8 @@
 		38E0F91A29851C4800E0A309 /* WallpaperPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E0F91929851C4800E0A309 /* WallpaperPicker.swift */; };
 		38E0F91C2985269800E0A309 /* WallpaperCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E0F91B2985269800E0A309 /* WallpaperCell.swift */; };
 		38E0F91E2985443B00E0A309 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E0F91D2985443B00E0A309 /* Color.swift */; };
+		38E0F92529865D6E00E0A309 /* ModePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E0F92429865D6E00E0A309 /* ModePicker.swift */; };
+		38E0F9272986AF9700E0A309 /* WallpaperDropDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E0F9262986AF9700E0A309 /* WallpaperDropDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +58,8 @@
 		38E0F91929851C4800E0A309 /* WallpaperPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallpaperPicker.swift; sourceTree = "<group>"; };
 		38E0F91B2985269800E0A309 /* WallpaperCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallpaperCell.swift; sourceTree = "<group>"; };
 		38E0F91D2985443B00E0A309 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		38E0F92429865D6E00E0A309 /* ModePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModePicker.swift; sourceTree = "<group>"; };
+		38E0F9262986AF9700E0A309 /* WallpaperDropDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WallpaperDropDelegate.swift; path = ../WallpaperDropDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +124,7 @@
 		121399DB2972560E00780368 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				1207B498296EF77000B5D36D /* AppearanceWallpaperView.swift */,
 				387DEB152984CCAD0053BABD /* DynamicWallpaperView.swift */,
 				38E0F9132984EC0E00E0A309 /* BlankWallpaper.swift */,
 				38E0F9152984F79D00E0A309 /* WallpaperPlaceholderCell.swift */,
@@ -130,6 +135,7 @@
 		121399DC2972563100780368 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				38E0F92429865D6E00E0A309 /* ModePicker.swift */,
 				38E0F91B2985269800E0A309 /* WallpaperCell.swift */,
 				38E0F91929851C4800E0A309 /* WallpaperPicker.swift */,
 				129D354D29715C2400240248 /* SaveButton.swift */,
@@ -159,7 +165,6 @@
 			children = (
 				1207B494296EF74B00B5D36D /* SolarWallpaperView.swift */,
 				1207B496296EF75F00B5D36D /* TimeWallpaperView.swift */,
-				1207B498296EF77000B5D36D /* AppearanceWallpaperView.swift */,
 			);
 			path = oldViews;
 			sourceTree = "<group>";
@@ -167,6 +172,7 @@
 		38E0F92129856A8E00E0A309 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				38E0F9262986AF9700E0A309 /* WallpaperDropDelegate.swift */,
 				1207B49A296F09F000B5D36D /* ImageModel.swift */,
 			);
 			name = Model;
@@ -260,6 +266,7 @@
 				38E0F91C2985269800E0A309 /* WallpaperCell.swift in Sources */,
 				1207B49B296F09F000B5D36D /* ImageModel.swift in Sources */,
 				387DEB162984CCAD0053BABD /* DynamicWallpaperView.swift in Sources */,
+				38E0F9272986AF9700E0A309 /* WallpaperDropDelegate.swift in Sources */,
 				1207B497296EF75F00B5D36D /* TimeWallpaperView.swift in Sources */,
 				1207B47F296EF60200B5D36D /* ContentView.swift in Sources */,
 				38E0F91A29851C4800E0A309 /* WallpaperPicker.swift in Sources */,
@@ -268,6 +275,7 @@
 				1207B495296EF74B00B5D36D /* SolarWallpaperView.swift in Sources */,
 				38E0F9162984F79D00E0A309 /* WallpaperPlaceholderCell.swift in Sources */,
 				38E0F91E2985443B00E0A309 /* Color.swift in Sources */,
+				38E0F92529865D6E00E0A309 /* ModePicker.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

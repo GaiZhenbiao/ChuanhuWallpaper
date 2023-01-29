@@ -14,7 +14,7 @@ struct ChuanhuWallpaperApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
-                .frame(minWidth: 550, minHeight: 350)
+                .frame(minWidth: 600, minHeight: 350)
         }
         .windowToolbarStyle(UnifiedCompactWindowToolbarStyle())
         .commands {
