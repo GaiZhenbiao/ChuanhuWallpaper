@@ -14,28 +14,28 @@ struct ChuanhuWallpaperApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
-                .frame(minWidth: 550, minHeight: 350)
+                .frame(minWidth: 600, minHeight: 350)
         }
-        .windowToolbarStyle(UnifiedCompactWindowToolbarStyle())
+        .windowToolbarStyle(.unified)
         .commands {
-                    CommandGroup(replacing: .appInfo) {
-                        Button("About Chuanhu Wallpaper") {
-                            NSApplication.shared.orderFrontStandardAboutPanel(
-                                options: [
-                                    NSApplication.AboutPanelOptionKey.credits: NSAttributedString(
-                                        string: "Huge thanks to @Keldos for creating this app's icon!",
-                                        attributes: [
-                                            NSAttributedString.Key.font: NSFont.boldSystemFont(
-                                                ofSize: NSFont.smallSystemFontSize)
-                                        ]
-                                    ),
-                                    NSApplication.AboutPanelOptionKey(
-                                        rawValue: "Copyright"
-                                    ): "Made by @土川虎虎虎"
+            CommandGroup(replacing: .appInfo) {
+                Button("About Chuanhu Wallpaper") {
+                    NSApplication.shared.orderFrontStandardAboutPanel(
+                        options: [
+                            NSApplication.AboutPanelOptionKey.credits: NSAttributedString(
+                                string: "Huge thanks to @Keldos for creating this app's icon!",
+                                attributes: [
+                                    NSAttributedString.Key.font: NSFont.boldSystemFont(
+                                        ofSize: NSFont.smallSystemFontSize)
                                 ]
-                            )
-                        }
-                    }
+                            ),
+                            NSApplication.AboutPanelOptionKey(
+                                rawValue: "Copyright"
+                            ): "Made by @土川虎虎虎"
+                        ]
+                    )
                 }
+            }
+        }
     }
 }

@@ -10,11 +10,10 @@
 "Solar" = "太阳";
 "Time" = "时间";
 "Is Primary" = "用作缩略图";
-"Is For:" = "用于";
+"Is For" = "用于";
 "Dark" = "暗色";
 "Light" = "亮色";
-"For Light Mode" = "作为浅色模式壁纸";
-"For Dark Mode" = "作为深色模式壁纸";
+"Auto" = "自动";
 "Altitude: %@" = "高度角：%@";
 "Azimuth: %@" = "高度角：%@";
 "None" = "无";

@@ -21,23 +21,22 @@ struct SaveButton: View {
                 let info = PictureInfo(fileName: wallpaper.filePath.path, isPrimary: wallpaper.isPrimary, isForLight: wallpaper.isFor == .light, isForDark: wallpaper.isFor == .dark, altitude: wallpaper.altitude, azimuth: wallpaper.azimuth)
                 pictureInfos.append(info)
             }
-            DispatchQueue.main.asyncAfter(deadline: .now() + (Double(wallpapers.count) * 0.8)) {
-                if let outputFileName = showSavePanel(){
-                    do {
-                        try wallpaperGenerator.generate(pictureInfos: pictureInfos, baseURL: URL(string: "/")!, outputFileName: outputFileName.path)
-                    } catch (let error as WallpapperError) {
-                        showErrorMessage = true
-                        errorMessage = "Unexpected error occurs: \(error.message)"
-                    } catch {
-                        showErrorMessage = true
-                        errorMessage = "Really Unexpected error occurs: \(error)"
-                    }
+            if let outputFileName = showSavePanel(){
+                do {
+                    try wallpaperGenerator.generate(pictureInfos: pictureInfos, baseURL: URL(string: "/")!, outputFileName: outputFileName.path)
+                } catch (let error as WallpapperError) {
+                    showErrorMessage = true
+                    errorMessage = "Unexpected error occurs: \(error.message)"
+                } catch {
+                    showErrorMessage = true
+                    errorMessage = "Really Unexpected error occurs: \(error)"
                 }
             }
         } label: {
             Label("Save...", systemImage: "square.and.arrow.down")
         }
         .buttonStyle(.standard)
+        .disabled(wallpapers.count < 2)
         .alert(isPresented: $showErrorMessage) {
             Alert(title: Text("An Error Occured"), message: Text(errorMessage), dismissButton: .cancel())
         }
