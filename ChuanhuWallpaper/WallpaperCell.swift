@@ -111,6 +111,9 @@ struct WallpaperCell<Actions: View>: View {
             .frame(width: 200)
             .padding()
         }
+        .transition(
+            .modifier(active: CardDeleteEffect(isActive: false), identity: CardDeleteEffect(isActive: true))
+        )
     }
 }
 
@@ -121,5 +124,38 @@ struct WallpaperCell_Previews: PreviewProvider {
                 
             }
         }
+    }
+}
+
+
+fileprivate struct CardDeleteEffect: ViewModifier {
+    var isActive: Bool
+    @State private var animate: Bool
+    @State private var dismiss: Bool
+    
+    init(isActive: Bool) {
+        self.isActive = isActive
+        animate = !isActive
+        dismiss = !isActive
+    }
+    
+    func body(content: Content) -> some View {
+        content
+            .opacity(isActive ? 1 : 0.5)
+            .scaleEffect(animate ? 1.2 : 1)
+            .scaleEffect(dismiss ? 0 : 1)
+            .opacity(dismiss ? 0 : 1)
+            .blur(radius: isActive ? 0 : 5)
+            .onChange(of: isActive) { _ in
+                withAnimation(.spring(response: 0.3)) {
+                    animate.toggle()
+                }
+                Task {
+                    try await Task.sleep(nanoseconds: 300_000_000)
+                    withAnimation(.spring(response: 0.3)) {
+                        dismiss.toggle()
+                    }
+                }
+            }
     }
 }

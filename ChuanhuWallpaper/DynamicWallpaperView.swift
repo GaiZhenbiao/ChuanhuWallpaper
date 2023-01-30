@@ -142,7 +142,9 @@ struct DynamicWallpaperView: View {
                 if let url {
                     guard !url.lastPathComponent.hasSuffix(".tmp") else { return }
                     guard !wallpapers.contains(where: { $0.filePath == url }) else { return }
-                    addWallpaper(at: url)
+                    withAnimation {
+                        addWallpaper(at: url)
+                    }
                 }
             }
         }
