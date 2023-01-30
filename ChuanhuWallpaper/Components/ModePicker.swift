@@ -81,9 +81,9 @@ struct ModePicker: View {
     @ViewBuilder
     var message: some View {
         switch mode {
-        case .time: Text("Time Mode")
-        case .solar: Text("Solar Mode")
-        case .appearance: Text("Light/Dark Mode")
+        case .time: Text("Time")
+        case .solar: Text("Solar")
+        case .appearance: Text("Appearance")
         }
     }
 }
