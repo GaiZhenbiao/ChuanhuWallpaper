@@ -16,19 +16,31 @@ struct SaveButton: View {
     let wallpaperGenerator = WallpaperGenerator()
     
     var body: some View {
-        Button {
-            var pictureInfos: [PictureInfo] = []
-            for wallpaper in wallpapers {
-                // Skip wallpapers which are not for light or dark mode when current mode is appearance.
-                if mode == .appearance && wallpaper.isFor == .none {
-                    continue
-                }
-                let info = PictureInfo(fileName: wallpaper.filePath.path, isPrimary: wallpaper.isPrimary, isForLight: wallpaper.isFor == .light, isForDark: wallpaper.isFor == .dark, altitude: wallpaper.altitude, azimuth: wallpaper.azimuth)
-                pictureInfos.append(info)
+        Button(action: save) {
+            Label("Save...", systemImage: "square.and.arrow.down")
+        }
+        .buttonStyle(.standard)
+        .disabled(wallpapers.count < 2)
+        .alert(isPresented: $showErrorMessage) {
+            Alert(title: Text("An Error Occured"), message: Text(errorMessage), dismissButton: .cancel())
+        }
+    }
+    
+    private func save() {
+        var pictureInfos: [PictureInfo] = []
+        for wallpaper in wallpapers {
+            // Skip wallpapers which are not for light or dark mode when current mode is appearance.
+            if mode == .appearance && wallpaper.isFor == .none {
+                continue
             }
-            if let outputFileName = showSavePanel(){
+            let info = PictureInfo(fileName: wallpaper.filePath.path, isPrimary: wallpaper.isPrimary, isForLight: wallpaper.isFor == .light, isForDark: wallpaper.isFor == .dark, altitude: wallpaper.altitude, azimuth: wallpaper.azimuth)
+            pictureInfos.append(info)
+        }
+        if let outputFileName = showSavePanel() {
+            let infos = pictureInfos
+            Task {
                 do {
-                    try wallpaperGenerator.generate(pictureInfos: pictureInfos, baseURL: URL(string: "/")!, outputFileName: outputFileName.path)
+                    try wallpaperGenerator.generate(pictureInfos: infos, baseURL: URL(string: "/")!, outputFileName: outputFileName.path)
                 } catch (let error as WallpapperError) {
                     showErrorMessage = true
                     errorMessage = "Unexpected error occurs: \(error.message)"
@@ -37,13 +49,6 @@ struct SaveButton: View {
                     errorMessage = "Really Unexpected error occurs: \(error)"
                 }
             }
-        } label: {
-            Label("Save...", systemImage: "square.and.arrow.down")
-        }
-        .buttonStyle(.standard)
-        .disabled(wallpapers.count < 2)
-        .alert(isPresented: $showErrorMessage) {
-            Alert(title: Text("An Error Occured"), message: Text(errorMessage), dismissButton: .cancel())
         }
     }
 }
