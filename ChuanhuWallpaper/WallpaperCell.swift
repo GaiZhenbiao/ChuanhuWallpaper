@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct WallpaperCell<Actions: View>: View {
+    @State private var image = Image(systemName: "exclamationmark.square.fill")
     @Binding var wallpaper: WallpaperImage
     var mode: WallpaperMode
     var namespace: Namespace.ID
@@ -25,7 +26,8 @@ struct WallpaperCell<Actions: View>: View {
     
     var body: some View {
         VStack(spacing: 12) {
-            wallpaper.image
+            image
+                .resizable()
                 .matchedGeometryEffect(id: wallpaper.id, in: namespace)
                 .aspectRatio(contentMode: .fill)
                 .frame(width: 150, height: 150)
@@ -90,6 +92,11 @@ struct WallpaperCell<Actions: View>: View {
         .cornerRadius(10)
         .onHover { isHovering = $0 }
         .onTapGesture { showEditPopover = true }
+        .onAppear {
+            if let nsImage = NSImage(contentsOfFile: wallpaper.filePath.path) {
+                image = Image(nsImage: nsImage)
+            }
+        }
         .popover(isPresented: $showEditPopover, arrowEdge: .bottom) {
             Form {
                 if mode == .solar {

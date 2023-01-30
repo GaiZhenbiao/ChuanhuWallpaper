@@ -12,6 +12,7 @@ import FilePicker
 struct DynamicWallpaperView: View {
     @Binding var wallpapers: [WallpaperImage]
     @State private var draggingWallpaper: WallpaperImage?
+    @State private var moveOn: WallpaperImage?
     @State private var isDropTarget = false
     var namespace: Namespace.ID
     @Binding var mode: WallpaperMode
@@ -38,10 +39,24 @@ struct DynamicWallpaperView: View {
                                 WallpaperCell(wallpaper: wallpaper, mode: mode, namespace: namespace) {
                                     contextButtons(wallpaper: wallpaper)
                                 }
+                                .overlay(
+                                    Group {
+                                        if moveOn == wallpaper.wrappedValue {
+                                            Rectangle()
+                                                .fill(Color.accentColor)
+                                                .frame(width: 3)
+                                        }
+                                    }
+                                    , alignment: .leading
+                                )
                                 .onDrag({
                                     draggingWallpaper = wallpaper.wrappedValue
                                     return NSItemProvider(item: Data() as NSSecureCoding, typeIdentifier: "public.image")
                                 })
+                                .onDrop(
+                                    of: [.image],
+                                    delegate: WallpaperDropDelegate(wallpaper: wallpaper.wrappedValue, wallpapers: $wallpapers, draggingWallpaper: $draggingWallpaper, moveOn: $moveOn)
+                                )
                             }
                         }
                         
