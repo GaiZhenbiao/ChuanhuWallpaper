@@ -15,7 +15,7 @@ struct ModePicker: View {
     var body: some View {
         Button {
             currentTask?.cancel()
-            withAnimation(.spring()) {
+            withAnimation(.spring(response: 0.5, dampingFraction: 0.9)) {
                 if mode == .solar {
                     mode = .time
                 } else if mode == .time {
@@ -27,7 +27,7 @@ struct ModePicker: View {
                 currentTask = Task { @MainActor in
                     try? await Task.sleep(nanoseconds: 2_000_000_000) // 2s
                     guard !Task.isCancelled else { return }
-                    withAnimation(.spring()) {
+                    withAnimation(.spring(response: 0.5, dampingFraction: 0.9)) {
                         showMessage = false
                     }
                 }
