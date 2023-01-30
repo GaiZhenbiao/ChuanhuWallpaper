@@ -41,7 +41,7 @@ struct AppearanceWallpaperView: View {
     }
     
     var body: some View {
-        HStack(spacing: 20) {
+        HStack(alignment: .top, spacing: 20) {
             VStack(alignment: .leading) {
                 Text("Light").font(.largeTitle.bold())
                 Group {
@@ -49,13 +49,14 @@ struct AppearanceWallpaperView: View {
                         lightWallpaper.wrappedValue.image
                             .matchedGeometryEffect(id: lightWallpaper.wrappedValue.id, in: namespace)
                             .aspectRatio(contentMode: .fill)
+                            .frame(maxHeight: 300)
                     } else {
                         WallpaperPlaceholderCell(compact: false, allowMultiple: false, isDropTarget: lightTargeted) { url in
                             addWallpaper(url: url, for: .light)
                         }
                     }
                 }
-                .aspectRatio(4 / 3, contentMode: .fit)
+                .aspectRatio(1, contentMode: .fit)
                 .frame(maxWidth: 300)
                 .mask(
                     RoundedRectangle(cornerRadius: 10)
@@ -85,13 +86,14 @@ struct AppearanceWallpaperView: View {
                         darkWallpaper.wrappedValue.image
                             .matchedGeometryEffect(id: darkWallpaper.wrappedValue.id, in: namespace)
                             .aspectRatio(contentMode: .fill)
+                            .frame(maxHeight: 300)
                     } else {
                         WallpaperPlaceholderCell(compact: false, allowMultiple: false, isDropTarget: darkTargeted) { url in
                             addWallpaper(url: url, for: .dark)
                         }
                     }
                 }
-                .aspectRatio(4 / 3, contentMode: .fit)
+                .aspectRatio(1, contentMode: .fit)
                 .frame(maxWidth: 300)
                 .mask(
                     RoundedRectangle(cornerRadius: 10)
