@@ -33,7 +33,7 @@ struct ContentView: View {
             .background(Color.backgroud)
             .padding(.bottom, bottomBarHeight)
             
-            SaveButton(wallpapers: wallpapers)
+            SaveButton(wallpapers: wallpapers, mode: mode)
                 .frame(maxWidth: .infinity)
                 .overlay(
                     Button {

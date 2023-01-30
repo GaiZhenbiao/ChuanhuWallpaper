@@ -9,7 +9,8 @@ import SwiftUI
 import WallpapperLib
 
 struct SaveButton: View {
-    var wallpapers: [WallpaperImage] = []
+    var wallpapers: [WallpaperImage]
+    var mode: WallpaperMode
     @State var showErrorMessage = false
     @State var errorMessage = ""
     let wallpaperGenerator = WallpaperGenerator()
@@ -18,6 +19,10 @@ struct SaveButton: View {
         Button {
             var pictureInfos: [PictureInfo] = []
             for wallpaper in wallpapers {
+                // Skip wallpapers which are not for light or dark mode when current mode is appearance.
+                if mode == .appearance && wallpaper.isFor == .none {
+                    continue
+                }
                 let info = PictureInfo(fileName: wallpaper.filePath.path, isPrimary: wallpaper.isPrimary, isForLight: wallpaper.isFor == .light, isForDark: wallpaper.isFor == .dark, altitude: wallpaper.altitude, azimuth: wallpaper.azimuth)
                 pictureInfos.append(info)
             }
@@ -45,6 +50,6 @@ struct SaveButton: View {
 
 struct SubmitButton_Previews: PreviewProvider {
     static var previews: some View {
-        SaveButton()
+        SaveButton(wallpapers: [], mode: .appearance)
     }
 }
