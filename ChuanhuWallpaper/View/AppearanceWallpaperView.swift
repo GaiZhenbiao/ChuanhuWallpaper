@@ -14,6 +14,9 @@ struct AppearanceWallpaperView: View {
     @Binding var wallpapers: [WallpaperImage]
     var namespace: Namespace.ID
     
+    @State private var lightModeImage = Image(systemName: "exclamationmark.square.fill")
+    @State private var darkModeImage = Image(systemName: "exclamationmark.square.fill")
+    
     @State private var lightTargeted = false
     @State private var darkTargeted = false
     
@@ -46,10 +49,21 @@ struct AppearanceWallpaperView: View {
                 Text("Light").font(.largeTitle.bold())
                 Group {
                     if lightWallpaper.wrappedValue.isValid {
-                        lightWallpaper.wrappedValue.image
+                        lightModeImage
+                            .resizable()
                             .matchedGeometryEffect(id: lightWallpaper.wrappedValue.id, in: namespace)
                             .aspectRatio(contentMode: .fill)
                             .frame(maxHeight: 300)
+                            .onAppear {
+                                if let nsImage = NSImage(contentsOfFile: lightWallpaper.wrappedValue.filePath.path) {
+                                    lightModeImage = Image(nsImage: nsImage)
+                                }
+                            }
+                            .onChange(of: lightWallpaper.wrappedValue.filePath) { newValue in
+                                if let nsImage = NSImage(contentsOfFile: newValue.path) {
+                                    lightModeImage = Image(nsImage: nsImage)
+                                }
+                            }
                     } else {
                         WallpaperPlaceholderCell(compact: false, allowMultiple: false, isDropTarget: lightTargeted) { url in
                             addWallpaper(url: url, for: .light)
@@ -83,10 +97,21 @@ struct AppearanceWallpaperView: View {
                 Text("Dark").font(.largeTitle.bold())
                 Group {
                     if darkWallpaper.wrappedValue.isValid {
-                        darkWallpaper.wrappedValue.image
+                        darkModeImage
+                            .resizable()
                             .matchedGeometryEffect(id: darkWallpaper.wrappedValue.id, in: namespace)
                             .aspectRatio(contentMode: .fill)
                             .frame(maxHeight: 300)
+                            .onAppear {
+                                if let nsImage = NSImage(contentsOfFile: darkWallpaper.wrappedValue.filePath.path) {
+                                    darkModeImage = Image(nsImage: nsImage)
+                                }
+                            }
+                            .onChange(of: darkWallpaper.wrappedValue.filePath) { newValue in
+                                if let nsImage = NSImage(contentsOfFile: newValue.path) {
+                                    darkModeImage = Image(nsImage: nsImage)
+                                }
+                            }
                     } else {
                         WallpaperPlaceholderCell(compact: false, allowMultiple: false, isDropTarget: darkTargeted) { url in
                             addWallpaper(url: url, for: .dark)
