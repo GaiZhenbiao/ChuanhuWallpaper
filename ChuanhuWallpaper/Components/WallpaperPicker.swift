@@ -72,7 +72,7 @@ struct WallpaperPicker<Label: View>: View {
 
 struct WallpaperPicker_Previews: PreviewProvider {
     static var previews: some View {
-        WallpaperPicker(wallpapers: [.noImage, .noImage], selection: .constant(.noImage)) {
+        WallpaperPicker(wallpapers: [.placeholder(), .placeholder()], selection: .constant(.placeholder())) {
             Text("Light Mode")
         }
     }
