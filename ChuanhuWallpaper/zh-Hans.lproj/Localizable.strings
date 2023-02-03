@@ -15,7 +15,7 @@
 "Light" = "亮色";
 "Auto" = "自动";
 "Altitude: %@" = "高度角：%@";
-"Azimuth: %@" = "高度角：%@";
+"Azimuth: %@" = "方位角：%@";
 "None" = "无";
 "Altitude" = "高度角";
 "Azimuth" = "方位角";
@@ -44,3 +44,4 @@
 "Drag images here" = "将图像拖放到此处";
 "OR" = "或者";
 "Choose Photo(s)..." = "选取图像...";
+"Remove All" = "清空图像";
