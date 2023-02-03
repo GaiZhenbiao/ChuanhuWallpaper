@@ -36,7 +36,7 @@ struct DynamicWallpaperView: View {
                                         wallpapers[index] = wallpaper
                                     }
                                 }
-                                ZStack {
+                                ZStack (alignment:.leading) {
                                     WallpaperCell(wallpaper: wallpaper, mode: mode, namespace: namespace) {
                                         contextButtons(wallpaper: wallpaper)
                                     }
@@ -47,8 +47,7 @@ struct DynamicWallpaperView: View {
                                                 .frame(width: 3)
                                                 .cornerRadius(10)
                                         }
-                                    }
-                                    
+                                    }.offset(x:-10) //Ideally, the indicator should be located at the middle of two cells.
                                 }
                                 
 //                                .overlay(
