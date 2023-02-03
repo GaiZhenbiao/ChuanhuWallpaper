@@ -44,14 +44,13 @@ struct WallpaperCell<Actions: View>: View {
                     if mode == .time {
                         Text(wallpaper.time, style: .time)
                     } else {
-                        if let azimuth = wallpaper.azimuth,
-                           azimuth.isNormal {
-                            Text("Azimuth: \(String(format: "%.2f", azimuth))")
-                        }
-
                         if let altitude = wallpaper.altitude,
                            altitude.isNormal {
                             Text("Altitude: \(String(format: "%.2f", altitude))")
+                        }
+                        if let azimuth = wallpaper.azimuth,
+                           azimuth.isNormal {
+                            Text("Azimuth: \(String(format: "%.2f", azimuth))")
                         }
                     }
                 }
