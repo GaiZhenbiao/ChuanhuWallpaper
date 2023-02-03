@@ -41,7 +41,7 @@ struct ModePicker: View {
             }
         }
         .buttonStyle(.plain)
-        .padding(5)
+        .padding(7)
         .background(Color.button)
         .cornerRadius(8)
         .font(.title2)
@@ -81,9 +81,9 @@ struct ModePicker: View {
     @ViewBuilder
     var message: some View {
         switch mode {
-        case .time: Text("Time")
-        case .solar: Text("Solar")
-        case .appearance: Text("Appearance")
+        case .time: Text("Time").font(.caption2)
+        case .solar: Text("Solar").font(.caption2)
+        case .appearance: Text("Appearance").font(.caption2)
         }
     }
 }

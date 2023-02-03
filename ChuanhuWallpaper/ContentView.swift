@@ -41,9 +41,15 @@ struct ContentView: View {
                             wallpapers.removeAll()
                         }
                     } label: {
-                        Image(systemName: "xmark")
+                        Label {
+                            Text("Remove All")
+                                .foregroundColor(.red)
+                        } icon: {
+                            Image(systemName: "trash.fill")
+                                .foregroundColor(.red)
+                        }
                     }
-                        .offset(x: wallpapers.isEmpty ? 100 : 0)
+                        .offset(x: wallpapers.isEmpty ? 200 : 0)
                         .animation(.spring(), value: wallpapers)
                     , alignment: .trailing
                 )

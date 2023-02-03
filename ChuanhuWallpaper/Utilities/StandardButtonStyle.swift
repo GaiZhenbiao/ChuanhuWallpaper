@@ -14,7 +14,6 @@ struct StandardButtonStyle: ButtonStyle {
         configuration.label
             .padding(.horizontal, 10)
             .padding(.vertical, 8)
-            .font(.title3)
             .opacity(isEnabled ? 1 : 0.5)
             .buttonStyle(.plain)
             .background(Color.button)

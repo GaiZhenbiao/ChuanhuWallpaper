@@ -25,20 +25,21 @@ struct WallpaperCell<Actions: View>: View {
     }
     
     var body: some View {
-        VStack(spacing: 12) {
+        VStack {
             image
                 .resizable()
                 .matchedGeometryEffect(id: wallpaper.id, in: namespace)
                 .aspectRatio(contentMode: .fill)
                 .frame(width: 150, height: 150)
                 .mask(
-                    RoundedRectangle(cornerRadius: 10)
+                    RoundedRectangle(cornerRadius: 8)
                         .matchedGeometryEffect(id: "\(wallpaper.id) mask", in: namespace)
                 )
             Text(wallpaper.fileName)
-                .font(.title3)
+                .font(.caption)
+                .foregroundColor(.secondary)
 
-            VStack(spacing: 10) {
+            VStack {
                 VStack(alignment: .leading) {
                     if mode == .time {
                         Text(wallpaper.time, style: .time)
@@ -64,18 +65,18 @@ struct WallpaperCell<Actions: View>: View {
                         Image(systemName: "photo")
                     }
                 }
-                .padding(.bottom, 8)
+//                .padding(.bottom, 8)
             }
             .foregroundColor(.secondary)
         }
         .matchedGeometryEffect(id: "\(wallpaper.id) container", in: namespace)
-        .frame(maxWidth: 200, maxHeight: .infinity)
-        .padding()
+        .frame(maxWidth: 150, maxHeight: .infinity)
+        .padding(10)
         .background(
             Color.secondary
                 .opacity(0.05)
                 .overlay(
-                    RoundedRectangle(cornerRadius: 10)
+                    RoundedRectangle(cornerRadius: 8)
                         .stroke(Color.secondary.opacity(0.2))
                 )
         )
@@ -85,12 +86,17 @@ struct WallpaperCell<Actions: View>: View {
                     Image(systemName: "chevron.down")
                         .foregroundColor(.secondary)
                         .padding(.bottom, 8)
+                        .padding(.trailing, 8)
                 }
             }
-            , alignment: .bottom
+            , alignment: .bottomTrailing
         )
-        .cornerRadius(10)
-        .onHover { isHovering = $0 }
+        .cornerRadius(8)
+        .onHover {_ in
+            withAnimation(.easeOut) {
+                isHovering.toggle()
+            }
+        }
         .onTapGesture { showEditPopover = true }
         .onAppear {
             if let nsImage = NSImage(contentsOfFile: wallpaper.filePath.path) {

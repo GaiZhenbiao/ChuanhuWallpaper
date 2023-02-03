@@ -25,8 +25,8 @@ struct DynamicWallpaperView: View {
                 ScrollView {
                     VStack {
                         LazyVGrid(
-                            columns: [GridItem(.adaptive(minimum: 200), spacing: 20)],
-                            spacing: 20
+                            columns: [GridItem(.adaptive(minimum: 170), spacing: 10)],
+                            spacing: 10
                         ) {
                             ForEach(wallpapers) { wallpaper in
                                 let wallpaper = Binding<WallpaperImage> {
@@ -36,19 +36,25 @@ struct DynamicWallpaperView: View {
                                         wallpapers[index] = wallpaper
                                     }
                                 }
-                                WallpaperCell(wallpaper: wallpaper, mode: mode, namespace: namespace) {
-                                    contextButtons(wallpaper: wallpaper)
-                                }
-                                .overlay(
+                                ZStack {
+                                    WallpaperCell(wallpaper: wallpaper, mode: mode, namespace: namespace) {
+                                        contextButtons(wallpaper: wallpaper)
+                                    }
                                     Group {
                                         if moveOn == wallpaper.wrappedValue {
                                             Rectangle()
                                                 .fill(Color.accentColor)
                                                 .frame(width: 3)
+                                                .cornerRadius(10)
                                         }
                                     }
-                                    , alignment: .leading
-                                )
+                                    
+                                }
+                                
+//                                .overlay(
+//
+//                                    , alignment: .leading
+//                                )
                                 .onDrag({
                                     draggingWallpaper = wallpaper.wrappedValue
                                     return NSItemProvider(item: Data() as NSSecureCoding, typeIdentifier: "public.image")
@@ -85,7 +91,7 @@ struct DynamicWallpaperView: View {
             }
             wallpaper.wrappedValue.isPrimary = isPrimary
         }
-        Toggle(isOn: isPrimary) {
+        Toggle(isOn: isPrimary.animation()) {
             Label("Is Primary", systemImage: "photo")
         }
         
@@ -99,7 +105,7 @@ struct DynamicWallpaperView: View {
             }
             wallpaper.wrappedValue.isFor = appearance
         }
-        Picker("Is For", selection: isFor) {
+        Picker("Is For", selection: isFor.animation()) {
             Label {
                 Text("Auto")
             } icon: {

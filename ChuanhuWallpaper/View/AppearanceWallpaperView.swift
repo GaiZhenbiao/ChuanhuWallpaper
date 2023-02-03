@@ -52,8 +52,8 @@ struct AppearanceWallpaperView: View {
                         lightModeImage
                             .resizable()
                             .matchedGeometryEffect(id: lightWallpaper.wrappedValue.id, in: namespace)
-                            .aspectRatio(contentMode: .fill)
-                            .frame(maxHeight: 300)
+                            .frame(maxWidth: 300)
+                            .cornerRadius(5)
                             .onAppear {
                                 if let nsImage = NSImage(contentsOfFile: lightWallpaper.wrappedValue.filePath.path) {
                                     lightModeImage = Image(nsImage: nsImage)
@@ -100,8 +100,8 @@ struct AppearanceWallpaperView: View {
                         darkModeImage
                             .resizable()
                             .matchedGeometryEffect(id: darkWallpaper.wrappedValue.id, in: namespace)
-                            .aspectRatio(contentMode: .fill)
-                            .frame(maxHeight: 300)
+                            .frame(maxWidth: 300)
+                            .cornerRadius(5)
                             .onAppear {
                                 if let nsImage = NSImage(contentsOfFile: darkWallpaper.wrappedValue.filePath.path) {
                                     darkModeImage = Image(nsImage: nsImage)
