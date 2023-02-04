@@ -31,6 +31,7 @@
 		38E0F9312987FB3C00E0A309 /* BlankWallpaper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E0F9302987FB3C00E0A309 /* BlankWallpaper.swift */; };
 		38E0F9332987FB4D00E0A309 /* WallpaperPlaceholderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E0F9322987FB4D00E0A309 /* WallpaperPlaceholderCell.swift */; };
 		38E0F9352987FB5400E0A309 /* WallpaperDropDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E0F9342987FB5400E0A309 /* WallpaperDropDelegate.swift */; };
+		38FF038F298E306200A1834C /* AppearanceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FF038E298E306200A1834C /* AppearanceCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +61,7 @@
 		38E0F9302987FB3C00E0A309 /* BlankWallpaper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlankWallpaper.swift; sourceTree = "<group>"; };
 		38E0F9322987FB4D00E0A309 /* WallpaperPlaceholderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WallpaperPlaceholderCell.swift; sourceTree = "<group>"; };
 		38E0F9342987FB5400E0A309 /* WallpaperDropDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WallpaperDropDelegate.swift; sourceTree = "<group>"; };
+		38FF038E298E306200A1834C /* AppearanceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearanceCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,10 +163,11 @@
 		38E0F9382987FCF100E0A309 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				129D354D29715C2400240248 /* SaveButton.swift */,
 				38E0F92429865D6E00E0A309 /* ModePicker.swift */,
 				38E0F91B2985269800E0A309 /* WallpaperCell.swift */,
 				38E0F91929851C4800E0A309 /* WallpaperPicker.swift */,
-				129D354D29715C2400240248 /* SaveButton.swift */,
+				38FF038E298E306200A1834C /* AppearanceCell.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -270,6 +273,7 @@
 				1207B47F296EF60200B5D36D /* ContentView.swift in Sources */,
 				38E0F91A29851C4800E0A309 /* WallpaperPicker.swift in Sources */,
 				1207B4A4296FEB3400B5D36D /* UsefulFunctions.swift in Sources */,
+				38FF038F298E306200A1834C /* AppearanceCell.swift in Sources */,
 				1207B47D296EF60200B5D36D /* ChuanhuWallpaperApp.swift in Sources */,
 				38E0F9352987FB5400E0A309 /* WallpaperDropDelegate.swift in Sources */,
 				38E0F92E2987FAC400E0A309 /* ImageModel.swift in Sources */,
@@ -420,7 +424,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 14;
 				DEVELOPMENT_ASSET_PATHS = "\"ChuanhuWallpaper/Preview Content\"";
-				DEVELOPMENT_TEAM = KWS26AWJ45;
+				DEVELOPMENT_TEAM = 343Q2BMR4W;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -450,7 +454,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 14;
 				DEVELOPMENT_ASSET_PATHS = "\"ChuanhuWallpaper/Preview Content\"";
-				DEVELOPMENT_TEAM = KWS26AWJ45;
+				DEVELOPMENT_TEAM = 343Q2BMR4W;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;

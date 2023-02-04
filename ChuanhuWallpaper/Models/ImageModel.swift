@@ -24,8 +24,12 @@ struct WallpaperImage: Hashable, Identifiable, Equatable {
     var time: Date = Date()
     var isValid = true
     
-    static func placeholder() -> WallpaperImage {
-        WallpaperImage(filePath: URL(string: "/Users/liyanan2004/Desktop/example.png")!, isValid: false)
+    static func placeholder(_ isFor: WallpaperAppearance = .none) -> WallpaperImage {
+        WallpaperImage(
+            filePath: URL(string: "/Users/liyanan2004/Desktop/example.png")!,
+            isFor: isFor,
+            isValid: false
+        )
     }
     
     var image: AnyView {
