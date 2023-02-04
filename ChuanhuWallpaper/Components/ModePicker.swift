@@ -56,10 +56,10 @@ struct ModePicker: View {
     var symbol: some View {
         switch mode {
         case .appearance:
-            Image("appearance")
+            Image("AppearanceIcon")
                 .resizable()
-                .renderingMode(.template)
-                .foregroundColor(.primary)
+//                .renderingMode(.template)
+//                .foregroundColor(.primary)
                 .aspectRatio(contentMode: .fit)
                 .frame(width: 20)
                 .transition(.modifier(active: RotateInOut(present: false, degrees: 360), identity: RotateInOut(present: true, degrees: 0)))
