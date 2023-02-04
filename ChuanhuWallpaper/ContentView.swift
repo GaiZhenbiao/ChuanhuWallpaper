@@ -61,6 +61,7 @@ struct ContentView: View {
                 .buttonStyle(.standard)
                 .background(
                     Color.backgroud
+                        .opacity(0.5)
                         .shadow(color: Color.black.opacity(0.05), radius: 5, y: -1)
                 )
                 .overlay(bottombarReader)
