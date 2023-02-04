@@ -30,7 +30,7 @@ struct ContentView: View {
                 }
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .background(Color.backgroud)
+//            .background(Color.backgroud)
             .padding(.bottom, bottomBarHeight)
             
             SaveButton(wallpapers: wallpapers, mode: mode)

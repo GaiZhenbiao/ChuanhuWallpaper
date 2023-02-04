@@ -72,8 +72,8 @@ struct WallpaperCell<Actions: View>: View {
         .frame(maxWidth: 150, maxHeight: .infinity)
         .padding(10)
         .background(
-            Color.secondary
-                .opacity(0.05)
+            Color.white
+//                .opacity(0.05)
                 .overlay(
                     RoundedRectangle(cornerRadius: 8)
                         .stroke(Color.secondary.opacity(0.2))

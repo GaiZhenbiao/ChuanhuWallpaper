@@ -18,7 +18,7 @@ struct AppearanceCell: View {
     
     var body: some View {
         VStack(alignment: .leading) {
-            header.font(.largeTitle.bold())
+            header.font(.title)
             Group {
                 if wallpaper.isValid {
                     image

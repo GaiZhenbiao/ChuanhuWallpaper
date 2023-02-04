@@ -23,14 +23,14 @@ struct ModePicker: View {
                 } else {
                     mode = .solar
                 }
-                showMessage = true
-                currentTask = Task { @MainActor in
-                    try? await Task.sleep(nanoseconds: 2_000_000_000) // 2s
-                    guard !Task.isCancelled else { return }
-                    withAnimation(.spring(response: 0.5, dampingFraction: 0.9)) {
-                        showMessage = false
-                    }
-                }
+//                showMessage = true
+//                currentTask = Task { @MainActor in
+//                    try? await Task.sleep(nanoseconds: 2_000_000_000) // 2s
+//                    guard !Task.isCancelled else { return }
+//                    withAnimation(.spring(response: 0.5, dampingFraction: 0.9)) {
+//                        showMessage = false
+//                    }
+//                }
             }
         } label: {
             HStack {
@@ -50,6 +50,11 @@ struct ModePicker: View {
             RoundedRectangle(cornerRadius: 8)
                 .stroke(Color.secondary.opacity(0.3))
         )
+        .onHover(perform: { _ in
+            withAnimation(.spring(response: 0.5, dampingFraction: 0.9)) {
+                showMessage.toggle()
+            }
+        })
     }
     
     @ViewBuilder
