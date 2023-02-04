@@ -24,6 +24,7 @@ struct SaveButton: View {
         .alert(isPresented: $showErrorMessage) {
             Alert(title: Text("An Error Occured"), message: Text(errorMessage), dismissButton: .cancel())
         }
+        .keyboardShortcut("s")
     }
     
     private func save() {

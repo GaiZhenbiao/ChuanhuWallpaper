@@ -49,6 +49,7 @@ struct ContentView: View {
                                 .foregroundColor(.red)
                         }
                     }
+                        .keyboardShortcut(KeyEquivalent.escape, modifiers: [])
                         .offset(x: wallpapers.isEmpty ? 200 : 0)
                         .animation(.spring(), value: wallpapers)
                     , alignment: .trailing

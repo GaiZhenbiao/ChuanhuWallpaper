@@ -63,6 +63,7 @@ struct WallpaperPlaceholderCell: View {
         } label: {
             Text("Choose Photo(s)...").fixedSize(horizontal: false, vertical: true)
         }
+        .keyboardShortcut("i")
     }
 }
 
