@@ -108,9 +108,9 @@ struct DynamicWallpaperView: View {
             Label {
                 Text("Auto")
             } icon: {
-                Image("appearance")
-                    .renderingMode(.template)
-                    .foregroundColor(.primary)
+                Image("AppearanceIcon")
+//                    .renderingMode(.template)
+//                    .foregroundColor(.primary)
             }
             .tag(WallpaperAppearance.none)
             Label("Light", systemImage: "sun.max").tag(WallpaperAppearance.light)
