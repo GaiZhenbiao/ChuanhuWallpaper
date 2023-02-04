@@ -50,6 +50,7 @@ struct ContentView: View {
                         }
                     }
                         .keyboardShortcut(KeyEquivalent.escape, modifiers: [])
+                        .help("Esc")
                         .offset(x: wallpapers.isEmpty ? 200 : 0)
                         .animation(.spring(), value: wallpapers)
                     , alignment: .trailing

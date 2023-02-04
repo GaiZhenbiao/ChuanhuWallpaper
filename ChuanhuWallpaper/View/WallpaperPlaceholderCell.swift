@@ -64,6 +64,7 @@ struct WallpaperPlaceholderCell: View {
             Text("Choose Photo(s)...").fixedSize(horizontal: false, vertical: true)
         }
         .keyboardShortcut("i")
+        .help("⌘ I")
     }
 }
 

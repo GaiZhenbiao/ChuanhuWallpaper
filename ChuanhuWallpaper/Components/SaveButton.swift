@@ -25,6 +25,7 @@ struct SaveButton: View {
             Alert(title: Text("An Error Occured"), message: Text(errorMessage), dismissButton: .cancel())
         }
         .keyboardShortcut("s")
+        .help("⌘ S")
     }
     
     private func save() {
