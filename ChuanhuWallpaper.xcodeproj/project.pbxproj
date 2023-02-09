@@ -422,7 +422,7 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 14;
+				CURRENT_PROJECT_VERSION = 16;
 				DEVELOPMENT_ASSET_PATHS = "\"ChuanhuWallpaper/Preview Content\"";
 				DEVELOPMENT_TEAM = KWS26AWJ45;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -435,7 +435,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				MARKETING_VERSION = 2.0;
+				MARKETING_VERSION = 2.1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.tuchuanhuhuhu.ChuanhuWallpaper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -452,7 +452,7 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 14;
+				CURRENT_PROJECT_VERSION = 16;
 				DEVELOPMENT_ASSET_PATHS = "\"ChuanhuWallpaper/Preview Content\"";
 				DEVELOPMENT_TEAM = KWS26AWJ45;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -465,7 +465,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				MARKETING_VERSION = 2.0;
+				MARKETING_VERSION = 2.1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.tuchuanhuhuhu.ChuanhuWallpaper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;

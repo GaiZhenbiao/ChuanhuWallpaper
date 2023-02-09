@@ -30,12 +30,17 @@ struct SaveButton: View {
     
     private func save() {
         var pictureInfos: [PictureInfo] = []
+        var info: PictureInfo
         for wallpaper in wallpapers {
             // Skip wallpapers which are not for light or dark mode when current mode is appearance.
-            if mode == .appearance && wallpaper.isFor == .none {
-                continue
+            if mode == .appearance {
+                if wallpaper.isFor == .none {
+                    continue
+                }
+                info = PictureInfo(fileName: wallpaper.filePath.path, isPrimary: wallpaper.isPrimary, isForLight: wallpaper.isFor == .light, isForDark: wallpaper.isFor == .dark, altitude: nil, azimuth: nil)
+            } else {
+                info = PictureInfo(fileName: wallpaper.filePath.path, isPrimary: wallpaper.isPrimary, isForLight: wallpaper.isFor == .light, isForDark: wallpaper.isFor == .dark, altitude: wallpaper.altitude, azimuth: wallpaper.azimuth)
             }
-            let info = PictureInfo(fileName: wallpaper.filePath.path, isPrimary: wallpaper.isPrimary, isForLight: wallpaper.isFor == .light, isForDark: wallpaper.isFor == .dark, altitude: wallpaper.altitude, azimuth: wallpaper.azimuth)
             pictureInfos.append(info)
         }
         if let outputFileName = showSavePanel() {

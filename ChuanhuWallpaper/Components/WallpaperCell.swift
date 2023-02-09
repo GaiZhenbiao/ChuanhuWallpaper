@@ -72,7 +72,7 @@ struct WallpaperCell<Actions: View>: View {
         .frame(maxWidth: 150, maxHeight: .infinity)
         .padding(10)
         .background(
-            Color.white
+            Color.backgroud
                 .opacity(0.5)
                 .overlay(
                     RoundedRectangle(cornerRadius: 8)
