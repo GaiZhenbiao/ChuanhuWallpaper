@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" xmlns:dc="http://purl.org/dc/elements/1.1/">
+<!--  请查看此处的文档 https://sparkle-project.org/documentation/publishing/#publishing-an-update  -->
+    <channel>
+        <title>Chuanhu Wallpaper</title>
+        
+        <item>
+            <title>2.1.2</title>
+            <pubDate>Sat, 11 Feb 2023 02:10:31 +0800</pubDate>
+            <sparkle:version>17</sparkle:version>
+            <sparkle:shortVersionString>2.1.2</sparkle:shortVersionString>
+            <description><![CDATA[
+                    <h2>2.1.2</h2>
+                    <h3>New Feature</h3>
+                    <li>增加自动检测更新功能</li>
+                ]]>
+            </description>
+            <link>https://github.com/GaiZhenbiao/ChuanhuWallpaper</link>
+            <sparkle:minimumSystemVersion>11.0</sparkle:minimumSystemVersion>
+            <enclosure url="https://github.com/GaiZhenbiao/ChuanhuWallpaper/releases/download/v2.1.2/ChuanhuWallpaper.app.zip" length="!LENTH" type="application/octet-stream" sparkle:edSignature="!PLEASE ENTER YOUR SUPublicEDKey HERE"/>
+<!--  请使用 generate_appcast tool 来生成上面的签名和大小信息，见 https://sparkle-project.org/documentation/ -->
+        </item>
+        
+        <item>
+            <title>2.1.1</title>
+            <link>https://github.com/GaiZhenbiao/ChuanhuWallpaper</link>
+            <sparkle:version>16</sparkle:version>
+            <description><![CDATA[
+                    <li>修复了某些情况下，亮暗色壁纸失效的问题</li>
+                ]]>
+            </description>
+            <pubDate>Thur, 9 Feb 2023 12:00:00 +0800</pubDate>
+            <enclosure url="https://github.com/GaiZhenbiao/ChuanhuWallpaper/releases/download/v2.1.1/ChuanhuWallpaper.app.zip" lengh="1178091" type="application/octet-stream" />
+            <sparkle:minimumSystemVersion>11.0</sparkle:minimumSystemVersion>
+        </item>
+
+    </channel>
+</rss>

@@ -32,6 +32,8 @@
 		38E0F9332987FB4D00E0A309 /* WallpaperPlaceholderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E0F9322987FB4D00E0A309 /* WallpaperPlaceholderCell.swift */; };
 		38E0F9352987FB5400E0A309 /* WallpaperDropDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E0F9342987FB5400E0A309 /* WallpaperDropDelegate.swift */; };
 		38FF038F298E306200A1834C /* AppearanceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FF038E298E306200A1834C /* AppearanceCell.swift */; };
+		E37B62DA2996919A0063562C /* Sparkle in Frameworks */ = {isa = PBXBuildFile; productRef = E37B62D92996919A0063562C /* Sparkle */; };
+		E37B62DC2996939C0063562C /* AutoUpdater.swift in Sources */ = {isa = PBXBuildFile; fileRef = E37B62DB2996939C0063562C /* AutoUpdater.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +64,9 @@
 		38E0F9322987FB4D00E0A309 /* WallpaperPlaceholderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WallpaperPlaceholderCell.swift; sourceTree = "<group>"; };
 		38E0F9342987FB5400E0A309 /* WallpaperDropDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WallpaperDropDelegate.swift; sourceTree = "<group>"; };
 		38FF038E298E306200A1834C /* AppearanceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearanceCell.swift; sourceTree = "<group>"; };
+		E31757B8299E771B006CC4FE /* appcast.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = appcast.xml; sourceTree = "<group>"; };
+		E37B62DB2996939C0063562C /* AutoUpdater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoUpdater.swift; sourceTree = "<group>"; };
+		E37B62E429969C5D0063562C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E37B62DA2996919A0063562C /* Sparkle in Frameworks */,
 				38273E842982C993002433F9 /* WallpapperLib in Frameworks */,
 				1207B49E296FAE6E00B5D36D /* FilePicker in Frameworks */,
 			);
@@ -97,6 +103,7 @@
 		1207B47B296EF60200B5D36D /* ChuanhuWallpaper */ = {
 			isa = PBXGroup;
 			children = (
+				E37B62E429969C5D0063562C /* Info.plist */,
 				1207B47C296EF60200B5D36D /* ChuanhuWallpaperApp.swift */,
 				12BF6A5729704133001F0EB4 /* AppDelegate.swift */,
 				1207B47E296EF60200B5D36D /* ContentView.swift */,
@@ -104,6 +111,7 @@
 				38E0F9372987FCDA00E0A309 /* Utilities */,
 				38E0F9382987FCF100E0A309 /* Components */,
 				38E0F9392987FD0900E0A309 /* Models */,
+				E37B62E12996977A0063562C /* Updater */,
 				1207B4AB2970055000B5D36D /* Localizable.strings */,
 				1207B482296EF60300B5D36D /* Preview Content */,
 				1207B49F296FC77700B5D36D /* noimage.jpg */,
@@ -181,6 +189,15 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		E37B62E12996977A0063562C /* Updater */ = {
+			isa = PBXGroup;
+			children = (
+				E37B62DB2996939C0063562C /* AutoUpdater.swift */,
+				E31757B8299E771B006CC4FE /* appcast.xml */,
+			);
+			path = Updater;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -200,6 +217,7 @@
 			packageProductDependencies = (
 				1207B49D296FAE6E00B5D36D /* FilePicker */,
 				38273E832982C993002433F9 /* WallpapperLib */,
+				E37B62D92996919A0063562C /* Sparkle */,
 			);
 			productName = ChuanhuWallpaper;
 			productReference = 1207B479296EF60200B5D36D /* ChuanhuWallpaper.app */;
@@ -232,6 +250,7 @@
 			mainGroup = 1207B470296EF60200B5D36D;
 			packageReferences = (
 				1207B49C296FAE6E00B5D36D /* XCRemoteSwiftPackageReference "FilePicker" */,
+				E37B62D82996919A0063562C /* XCRemoteSwiftPackageReference "Sparkle" */,
 			);
 			productRefGroup = 1207B47A296EF60200B5D36D /* Products */;
 			projectDirPath = "";
@@ -279,6 +298,7 @@
 				38E0F92E2987FAC400E0A309 /* ImageModel.swift in Sources */,
 				1207B495296EF74B00B5D36D /* SolarWallpaperView.swift in Sources */,
 				38E0F91E2985443B00E0A309 /* Color.swift in Sources */,
+				E37B62DC2996939C0063562C /* AutoUpdater.swift in Sources */,
 				38E0F92529865D6E00E0A309 /* ModePicker.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -428,6 +448,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ChuanhuWallpaper/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "川虎壁纸";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -458,6 +479,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ChuanhuWallpaper/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "川虎壁纸";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -505,6 +527,14 @@
 				minimumVersion = 1.0.0;
 			};
 		};
+		E37B62D82996919A0063562C /* XCRemoteSwiftPackageReference "Sparkle" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sparkle-project/Sparkle";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -516,6 +546,11 @@
 		38273E832982C993002433F9 /* WallpapperLib */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = WallpapperLib;
+		};
+		E37B62D92996919A0063562C /* Sparkle */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E37B62D82996919A0063562C /* XCRemoteSwiftPackageReference "Sparkle" */;
+			productName = Sparkle;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
