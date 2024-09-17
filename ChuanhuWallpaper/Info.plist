@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>SUEnableDownloaderService</key>
+	<true/>
+	<key>SUEnableInstallerLauncherService</key>
+	<true/>
+	<key>SUFeedURL</key>
+	<string>! 最好能放在另一个服务器上发布，实在不方便再用https://raw.githubusercontent.com/GaiZhenbiao/ChuanhuWallpaper/main/ChuanhuWallpaper/Updater/appcast.xml</string>
+	<key>SUPublicEDKey</key>
+	<string>! 运行 ./bin/generate_keys tool (from the Sparkle distribution root).</string>
+</dict>
+</plist>
