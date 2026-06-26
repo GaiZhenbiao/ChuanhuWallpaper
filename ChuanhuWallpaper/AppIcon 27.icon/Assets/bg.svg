@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1024px" height="1024px" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>矩形</title>
+    <defs>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="66.5199547%" id="linearGradient-1">
+            <stop stop-color="#D0E2FC" offset="0%"></stop>
+            <stop stop-color="#EBEDD5" offset="31.3790701%"></stop>
+            <stop stop-color="#F9DDB0" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="macOS-26" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect id="矩形" fill="url(#linearGradient-1)" x="0" y="0" width="1024" height="1024"></rect>
+    </g>
+</svg>

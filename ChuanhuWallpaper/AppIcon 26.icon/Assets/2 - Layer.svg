@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1024px" height="1024px" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>2 - Layer</title>
+    <defs>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#A4EBE7" offset="0%"></stop>
+            <stop stop-color="#2B653A" offset="99.3213574%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="macOS-26" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="2---Layer" fill="url(#linearGradient-1)">
+            <path d="M300.278428,525.739656 L1292.11483,1488.46345 C1330.03623,1525.27177 1330.93855,1585.85218 1294.13023,1623.77357 C1276.11003,1642.3387 1251.34007,1652.81553 1225.46747,1652.81553 L-758.205331,1652.81553 C-811.053084,1652.81553 -853.894652,1609.97397 -853.894652,1557.12621 C-853.894652,1531.25361 -843.41782,1506.48365 -824.852692,1488.46345 L166.983707,525.739656 C204.108819,489.704249 263.153317,489.704249 300.278428,525.739656 Z" id="三角形备份"></path>
+        </g>
+    </g>
+</svg>
